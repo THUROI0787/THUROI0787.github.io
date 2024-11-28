@@ -19,6 +19,7 @@ Recent News
 ======
 * **Nov 25, 2024** Give a talk about [*SPikE-SSM*](https://arxiv.org/abs/2410.17268) in Lab of [Bo Hong](https://brain.tsinghua.edu.cn/en/info/1010/1008.htm), [Tsinghua Laboratory of Brain and Intelligence](https://brain.tsinghua.edu.cn/en/index.htm).
 * **Oct 24, 2024** Honored to be invited to [China International Digital Economy Expo 2024](https://www.cidee-zd.cn/index-en.html) and happy to share. A fulfilling time in Shijiazhuang, Hebei, China! See [this](images/Expo2024.jpg).
+* **Oct, 2024** New preprint [*Diff-2-in-1*](https://arxiv.org/abs/2411.05005) on arxiv!
 * **Oct, 2024** Review ICLR for the first time!
 * **Oct 13-16, 2024** Attend [the 2nd Nature Conference on Neuromorphic Computing](https://conferences.nature.com/event/NeuromorphicComputing) in Beijing! See [this](images/NC2024.jpg).
 * **Oct, 2024** New preprint [*SPikE-SSM*](https://arxiv.org/abs/2410.17268) on arxiv!
