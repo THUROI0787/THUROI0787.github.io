@@ -22,7 +22,7 @@ Recent News
 * **Oct, 2024** Review ICLR for the first time!
 * **Oct 13-16, 2024** Attend [the 2nd Nature Conference on Neuromorphic Computing](https://conferences.nature.com/event/NeuromorphicComputing) in Beijing! See [this](images/NC2024.jpg).
 * **Oct, 2024** New preprint [*SPikE-SSM*](https://arxiv.org/abs/2410.17268) on arxiv!
-* **Sep, 2024** Bach to THU, and start serving as a Teaching Assistant in Course-40231212: Design and Practice of Intelligent Robot, 2024fall.
+* **Sep, 2024** Back to THU, and start serving as a Teaching Assistant in Course-40231212: Design and Practice of Intelligent Robot, 2024fall.
 * **Aug, 2024** Work as a Research Assistant in Dept.CS, CityU, under the guidance of [Prof.Zhichao Lu](https://www.cs.cityu.edu.hk/~zhichalu/).
 * **Aug, 2024** Win the third prize in the [2024 China-U.S. Young Maker Competition Beijing Division](https://builder.eddy4teachers.com/china-us)!
 * **Jul, 2024** Finish all my minor courses in [Statistics](https://tsing.v-dk.com/en/programs/undergraduate-programs/) just using one year! A crazy but rewarding time.
