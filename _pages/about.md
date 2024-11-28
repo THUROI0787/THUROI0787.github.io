@@ -9,7 +9,7 @@ redirect_from:
 
 Hi, Welcome to my personal site!
 
-I'm a last year undergraduate student from [Department of Electronic Engineering]((https://www.ee.tsinghua.edu.cn/en/)) and [Department of Statistics and Data Science](https://www.stat.tsinghua.edu.cn/en/), [Tsinghua University](https://www.tsinghua.edu.cn/en/), major in electronic science and technology, with a minor degree in statistics. My research interest spreads broadly in computer vision, computer graphics, machine learning, multimedia system and media philosophy. 
+I'm a last year undergraduate student from [Department of Electronic Engineering](https://www.ee.tsinghua.edu.cn/en/) and [Department of Statistics and Data Science](https://www.stat.tsinghua.edu.cn/en/), [Tsinghua University](https://www.tsinghua.edu.cn/en/), major in electronic science and technology, with a minor degree in statistics. My research interest spreads broadly in computer vision, computer graphics, machine learning, multimedia system and media philosophy. 
 
 I have close contact with [Prof. OOI Wei Tsang](https://www.comp.nus.edu.sg/cs/people/ooiwt/) from [Scool of Computing](https://www.comp.nus.edu.sg/), [National University of Singapore](https://nus.edu.sg/).
 
