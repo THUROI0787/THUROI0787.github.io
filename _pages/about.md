@@ -16,7 +16,7 @@ I have close contact with [Prof. Zhichao Lu](https://www.cs.cityu.edu.hk/~zhicha
 
 Recent News
 ======
-* </strong>Oct, 2024</strong> Graduated from Tsinghua University.
+* **Oct, 2024** Graduated from Tsinghua University.
 
 Research Vision
 ======
