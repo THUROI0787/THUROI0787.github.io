@@ -13,7 +13,7 @@ I'm a last-year undergraduate from [Department of Electronic Engineering](https:
 
 I have close contact with [Prof. Zhichao Lu](https://www.cs.cityu.edu.hk/~zhichalu/) from [Department of Computer Science](https://www.cs.cityu.edu.hk/), [CityU](https://www.cityu.edu.hk/) and [Prof. OOI Wei Tsang](https://www.comp.nus.edu.sg/cs/people/ooiwt/) from [School of Computing](https://www.comp.nus.edu.sg/), [National University of Singapore](https://nus.edu.sg/).
 
-Notably, I also serve as the lead developer at the startup company [Qingguang Innovation Technology (Beijing) Ltd](). Our mission is to enhance capabilities of the visually impaired through artificial intelligence and technology for a more inclusive, safer and better world.
+Notably, I also serve as the lead developer at the startup company [Qingguang Innovation Technology (Beijing) Ltd](images/QGHC_QRcode.png). Our mission is to enhance capabilities of the visually impaired through artificial intelligence and technology for a more inclusive, safer and better world.
 
 
 Recent News
