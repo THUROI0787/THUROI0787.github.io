@@ -13,11 +13,14 @@ I'm a last-year undergraduate from [Department of Electronic Engineering](https:
 
 I have close contact with [Prof. Zhichao Lu](https://www.cs.cityu.edu.hk/~zhichalu/) from [Department of Computer Science](https://www.cs.cityu.edu.hk/), [CityU](https://www.cityu.edu.hk/) and [Prof. OOI Wei Tsang](https://www.comp.nus.edu.sg/cs/people/ooiwt/) from [School of Computing](https://www.comp.nus.edu.sg/), [National University of Singapore](https://nus.edu.sg/).
 
+Notably, I also serve as the lead developer at the startup company Qingguang Innovation Technology (Beijing) Ltd. Our mission is to enhance capabilities of the visually impaired through artificial intelligence and technology for a more inclusive, safer and better world.
+
 
 Recent News
 ======
-* **Oct 25, 2024** Give a talk about [SPikE-SSM](https://arxiv.org/abs/2410.17268) in Lab of [Bo Hong](https://brain.tsinghua.edu.cn/en/info/1010/1008.htm), [Tsinghua Laboratory of Brain and Intelligence](https://brain.tsinghua.edu.cn/en/index.htm).
-* **Oct, 2024** Graduated from Tsinghua University.
+* **Nov 25, 2024** Give a talk about [SPikE-SSM](https://arxiv.org/abs/2410.17268) in Lab of [Bo Hong](https://brain.tsinghua.edu.cn/en/info/1010/1008.htm), [Tsinghua Laboratory of Brain and Intelligence](https://brain.tsinghua.edu.cn/en/index.htm).
+* **Oct, 2024** Review ICLR for the first time!
+* **Jan, 2024** Join Qingguang Innovation Technology (Beijing) Ltd as the lead developer. Start an enriching and exciting journey of engineering and entrepreneurship that is different from doing research!
 
 Research Vision
 ======
