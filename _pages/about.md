@@ -13,7 +13,7 @@ I'm a last-year undergraduate from [Department of Electronic Engineering](https:
 
 I have close contact with [Prof. Zhichao Lu](https://www.cs.cityu.edu.hk/~zhichalu/) from [Department of Computer Science](https://www.cs.cityu.edu.hk/), [CityU](https://www.cityu.edu.hk/) and [Prof. OOI Wei Tsang](https://www.comp.nus.edu.sg/cs/people/ooiwt/) from [School of Computing](https://www.comp.nus.edu.sg/), [National University of Singapore](https://nus.edu.sg/).
 
-Notably, I also serve as the lead developer at the startup company Qingguang Innovation Technology (Beijing) Ltd. Our mission is to enhance capabilities of the visually impaired through artificial intelligence and technology for a more inclusive, safer and better world.
+Notably, I also serve as the lead developer at the startup company [Qingguang Innovation Technology (Beijing) Ltd](). Our mission is to enhance capabilities of the visually impaired through artificial intelligence and technology for a more inclusive, safer and better world.
 
 
 Recent News
@@ -28,4 +28,4 @@ My research interests span broadly across artificial intelligence, encompassing 
 
 As for applications, I firmly believe that through the lens of media philosophy, optimizing media can act as a catalyst for advancements in social productivity, transforming production paradigms and significantly influencing the future. Therefore, I am particularly interested in harnessing AI to enhance interactive multimedia applications, with a special focus on tackling computer vision challenges.
 
-As for theory, my research interests lie at the intersection of dynamical systems, cognitive neuroscience, and artificial intelligence. I am dedicated to developing powerful models and algorithms inspired by the intrinsic principles and mechanisms observed in the human brain. Ultimately, my research aims to empower human intelligence with more capable, efficient, and sustainable AI.
+As for theory, my research interests lie at the intersection of dynamical systems, cognitive neuroscience, and artificial intelligence. I am dedicated to developing powerful models and algorithms inspired by the intrinsic principles and mechanisms observed in the human brain. Ultimately, my research aims to empower human intelligence with more capable, interpretable, efficient, and sustainable AI.
