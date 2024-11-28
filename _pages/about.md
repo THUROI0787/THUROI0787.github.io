@@ -16,6 +16,7 @@ I have close contact with [Prof. Zhichao Lu](https://www.cs.cityu.edu.hk/~zhicha
 
 Recent News
 ======
+* **Oct 25, 2024** Give a talk about [SPikE-SSM](https://arxiv.org/abs/2410.17268) in Lab of [Bo Hong](https://brain.tsinghua.edu.cn/en/info/1010/1008.htm), [Tsinghua Laboratory of Brain and Intelligence](https://brain.tsinghua.edu.cn/en/index.htm).
 * **Oct, 2024** Graduated from Tsinghua University.
 
 Research Vision
