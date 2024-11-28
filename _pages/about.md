@@ -17,12 +17,12 @@ Notably, I also serve as the lead developer at the startup company [Qingguang In
 
 Recent News
 ======
-* **Nov 25, 2024** Give a talk about [SPikE-SSM](https://arxiv.org/abs/2410.17268) in Lab of [Bo Hong](https://brain.tsinghua.edu.cn/en/info/1010/1008.htm), [Tsinghua Laboratory of Brain and Intelligence](https://brain.tsinghua.edu.cn/en/index.htm).
+* **Nov 25, 2024** Give a talk about [*SPikE-SSM*](https://arxiv.org/abs/2410.17268) in Lab of [Bo Hong](https://brain.tsinghua.edu.cn/en/info/1010/1008.htm), [Tsinghua Laboratory of Brain and Intelligence](https://brain.tsinghua.edu.cn/en/index.htm).
 * **Oct, 2024** Review ICLR for the first time!
 * **Oct, 2024** New preprint [SPikE-SSM](https://arxiv.org/abs/2410.17268) on arxiv!
 * **Sep, 2024** Start serving as a Teaching Assistant in Course-40231212: Design and Practice of Intelligent Robot, in Dept.EE, THU.
 * **Aug, 2024** Work as a Research Assistant in Dept.CS, CityU, under the guidance of [Prof.Zhichao Lu](https://www.cs.cityu.edu.hk/~zhichalu/).
-* **Jun, 2024** Our project ***AI Copilot for the visually impaired*** was selected for [the 3rd iStar Program](https://mp.weixin.qq.com/s/IeQXQZAgocu6yQmqhvnpnw)(top 11 in THU).
+* **Jun, 2024** Our project *AI Copilot for the visually impaired* was selected for [the 3rd iStar Program](https://mp.weixin.qq.com/s/IeQXQZAgocu6yQmqhvnpnw)(top 11 in THU).
 * **Jan, 2024** Join [Qingguang Innovation Technology (Beijing) Ltd](images/QGHC_QRcode.png) as the lead developer. Start an enriching and exciting journey of engineering and entrepreneurship that is different from doing research!
 * **Oct, 2023** Collaborate with members in CS of UIUC, under the guidance of [Prof.Yu-Xiong Wang](https://yxw.cs.illinois.edu/).
 * **Aug, 2023** Start my summer internship in School of Computing, NUS. Work as a Research Assistant under the guidance of [Prof.Ooi Wei Tsang](https://www.comp.nus.edu.sg/cs/people/ooiwt/).
