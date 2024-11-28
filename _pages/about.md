@@ -29,7 +29,7 @@ Recent News
 * **Jul, 2024** Our work *Layer Skipping & Frequency Scaling* was accepted to [1st Workshop on Cooperative Intelligence for Embodied AI](https://coop-intelligence.github.io/) of ECCV2024. See you in Milan!
 * **Jun, 2024** Our project *AI Copilot for the visually impaired* was selected for [the 3rd iStar Program](https://mp.weixin.qq.com/s/IeQXQZAgocu6yQmqhvnpnw)(top 11 in THU)!
 * **Mar, 2024** Our work [*Volumetric Video Compression Through Neural-based Representation*](https://dl.acm.org/doi/10.1145/3652212.3652220) was accepted to [MMVE '24](https://mmve-workshop.org/2024/index.html). See you in Bari!
-* **Jan, 2024** Join [Qingguang Innovation Technology (Beijing) Ltd](images/QGHC_QRcode.png) as the lead developer. Start an enriching and exciting journey of engineering and entrepreneurship which is so different from doing research!
+* **Jan, 2024** Join [Qingguang Innovation Technology (Beijing) Ltd](images/QGHC_QRcode.png) as the lead developer. Start an enriching and exciting journey of engineering and entrepreneurship which is quite different from doing research!
 * **Oct, 2023** Collaborate with members in CS of UIUC, under the guidance of [Prof.Yu-Xiong Wang](https://yxw.cs.illinois.edu/).
 * **Aug, 2023** Start my summer internship in School of Computing, NUS. Work as a Research Assistant under the guidance of [Prof.Ooi Wei Tsang](https://www.comp.nus.edu.sg/cs/people/ooiwt/).
 
