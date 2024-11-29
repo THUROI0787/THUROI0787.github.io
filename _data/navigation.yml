@@ -7,7 +7,7 @@ main:
   #   url: /portfolio/
         
   - title: "CV"
-    url: /files/CV_RuoyuZhao.pdf
+    url: https://thuroi0787.github.io/files/CV_RuoyuZhao.pdf  # /cv/
 
   # - title: "Blog Posts"
   #   url: /year-archive/
