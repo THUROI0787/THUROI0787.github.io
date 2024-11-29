@@ -9,4 +9,4 @@ redirect_from:
 
 {% include base_path %}
 
-View [here]{}.
+View [here]{files/CV_RuoyuZhao.pdf}.
