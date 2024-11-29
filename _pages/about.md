@@ -9,7 +9,7 @@ redirect_from:
 
 Hi, I'm Roi. Welcome to my personal site!
 
-I'm a last-year undergraduate from [Department of Electronic Engineering](https://www.ee.tsinghua.edu.cn/en/) and [Department of Statistics and Data Science](https://www.stat.tsinghua.edu.cn/en/), [Tsinghua Univ.](https://www.tsinghua.edu.cn/en/), major in Electronic Science and Technology, with a minor degree in Statistics. My research interest spreads broadly in machine learning, neuromorphic computing, computer vision and multimedia system. 
+I'm a last-year undergraduate from [Department of Electronic Engineering](https://www.ee.tsinghua.edu.cn/en/) and [Department of Statistics and Data Science](https://www.stat.tsinghua.edu.cn/en/), [Tsinghua Univ.](https://www.tsinghua.edu.cn/en/), major in Electronic Information Science and Technology, with a minor degree in Statistics. My research interest spreads broadly in machine learning, neuromorphic computing, computer vision and multimedia system. 
 
 I have close contact with [Prof.Zhichao Lu](https://www.cs.cityu.edu.hk/~zhichalu/) from [Dept.CS](https://www.cs.cityu.edu.hk/), [CityU](https://www.cityu.edu.hk/) and [Prof.OOI Wei Tsang](https://www.comp.nus.edu.sg/cs/people/ooiwt/) from [School of Computing](https://www.comp.nus.edu.sg/), [NUS](https://nus.edu.sg/).
 
