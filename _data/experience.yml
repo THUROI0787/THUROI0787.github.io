@@ -1,22 +1,22 @@
-# Logos: "logo" = image path, otherwise a monogram badge is drawn from "mono" + "color".
+# Logos: "logo" = image path (plate: true puts it on a white tile); otherwise a monogram badge from "mono" + "color".
 education:
   - org: "City University of Hong Kong"
-    mono: "CityU"
-    color: "#8a1538"
+    logo: /assets/img/logos/cityu.svg
+    plate: true
     degree: "PhD in Computer Science"
     dates: "2025.09 – Present"
     place: "Hong Kong"
     detail: "Advisors: Prof. Zhichao Lu and Prof. Qingfu Zhang"
   - org: "Tsinghua University"
-    mono: "THU"
-    color: "#660874"
+    logo: /assets/img/logos/tsinghua.svg
+    plate: true
     degree: "B.Eng. in Electronic Information Science and Technology"
     dates: "2020.09 – 2025.06"
     place: "Beijing"
     detail: "Department of Electronic Engineering · Outstanding Undergraduate Thesis Award (top 5%)"
   - org: "Tsinghua University"
-    mono: "THU"
-    color: "#660874"
+    logo: /assets/img/logos/tsinghua.svg
+    plate: true
     degree: "Minor in Statistics"
     dates: "2023.09 – 2024.06"
     place: "Beijing"
@@ -33,47 +33,47 @@ work:
     detail: "Leading technology and algorithm R&D for brain-inspired AI on memristor-based compute-in-memory chips."
   - org: "Qingguang Innovation Technology"
     mono: "QG"
-    color: "#0f766e"
+    color: "#8e46a0"   # brand purple; wordmark kept in assets/img/logos/qingguang.png
     role: "Lead Developer"
     dates: "2024.01 – 2025.10"
     place: "Beijing"
     tag: industry
     detail: "AI-assisted smart glasses for the visually impaired: on-device segmentation and path planning on NVIDIA Jetson."
   - org: "Tsinghua University"
-    mono: "THU"
-    color: "#660874"
+    logo: /assets/img/logos/tsinghua.svg
+    plate: true
     role: "Research Assistant · Prof. Yali Li & Prof. Shengjin Wang"
     dates: "2024.09 – 2025.06"
     place: "Beijing"
     tag: research
     detail: "Continual lifelong learning with diffusion generative models (undergraduate thesis)."
   - org: "City University of Hong Kong"
-    mono: "CityU"
-    color: "#8a1538"
+    logo: /assets/img/logos/cityu.svg
+    plate: true
     role: "Research Assistant · Prof. Zhichao Lu"
     dates: "2024.08 – 2024.11"
     place: "Hong Kong"
     tag: research
     detail: "Parallel soft-reset spiking neurons for long-sequence spiking SSMs."
   - org: "University of Illinois Urbana-Champaign"
-    mono: "UIUC"
-    color: "#c43d1b"
+    logo: /assets/img/logos/uiuc.svg
+    plate: true
     role: "Research Assistant · Prof. Yu-Xiong Wang"
     dates: "2023.10 – 2024.01"
     place: "Remote"
     tag: research
     detail: "A unified diffusion framework for multi-modal generation and dense perception."
   - org: "National University of Singapore"
-    mono: "NUS"
-    color: "#003d7c"
+    logo: /assets/img/logos/nus.svg
+    plate: true
     role: "Research Assistant · Prof. Wei Tsang Ooi"
     dates: "2023.08 – 2023.11"
     place: "Singapore"
     tag: research
     detail: "Neural radiance fields for volumetric video compression."
   - org: "Tsinghua University"
-    mono: "THU"
-    color: "#660874"
+    logo: /assets/img/logos/tsinghua.svg
+    plate: true
     role: "Undergraduate Researcher (SRT) · Prof. He Tian"
     dates: "2022.05 – 2022.09"
     place: "Beijing"

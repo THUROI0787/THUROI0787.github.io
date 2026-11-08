@@ -1,0 +1,15 @@
+{%- assign pub = include.pub -%}
+<li class="publist__item" data-themes="{{ pub.themes | join: ' ' }}">
+  <span class="badge badge--{{ pub.status }}">{{ pub.badge }}</span>
+  <div>
+    <p class="pub__title">{{ pub.title }}{% if pub.role %} <span class="role role--{{ pub.role }}">{% if pub.role == "first" %}First author{% else %}Co-first{% endif %}</span>{% endif %}</p>
+    <p class="pub__authors">{% include authors.html authors=pub.authors %}</p>
+    <p class="pub__venue pub__venue--compact">{{ pub.venue }}</p>
+  </div>
+  <div class="publist__side">
+    {% include theme-icons.html ids=pub.themes %}
+    <div class="publist__links">
+      {%- for l in pub.links %}<a href="{{ l.url }}" title="{{ l.label }}"><i class="{{ l.icon }}" aria-hidden="true"></i><span>{{ l.label }}</span></a>{%- endfor %}
+    </div>
+  </div>
+</li>

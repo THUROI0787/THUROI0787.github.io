@@ -1,29 +1,26 @@
-# News, newest first. type picks the icon: paper | award | role | talk | teach | event
-# DRAFT: dates and wording to be confirmed with Roi.
+# News, newest first. type picks the icon: paper | award | role | talk | project | event | visit
+# DRAFT: some months still to be confirmed with Roi (marked "confirm" below).
+- date: "2026.11"   # confirm
+  type: project
+  text: "Released [OpenArchEvo v1.5](https://optima-cityu.github.io/OpenArchEvo-SciencePal/) with the SciencePal platform: a team of AI agents guides evolutionary search over neural architectures."
 - date: "2026.10"
   type: paper
-  text: "New preprints on [SGD plasticity](https://arxiv.org/abs/2610.11475) and [Gaussian regularizers in contrastive learning](https://arxiv.org/abs/2610.10299)."
+  text: "New preprints on [SGD plasticity](https://arxiv.org/abs/2610.11475), [Gaussian regularizers in contrastive learning](https://arxiv.org/abs/2610.10299), and [residual-aware spectral capacity](https://arxiv.org/abs/2610.30823)."
 - date: "2026.09"
   type: paper
+  text: "[OpenArchEvo](https://arxiv.org/abs/2609.40258) is on arXiv, with [code](https://github.com/Optima-CityU/OpenArchEvo): LLM-guided evolution discovers native spiking architectures."
+- date: "2026.09"   # confirm
+  type: paper
   text: "*Neural Spectral Capacity* accepted to **NeurIPS 2026**."
-- date: "2026.09"
-  type: teach
-  text: "Serving as a Teaching Assistant for CS5491 Artificial Intelligence at CityU."
 - date: "2026.08"
   type: role
   text: "Joined [BrainGalaxy](https://brain-galaxy.omniex.ai/) (硅基智宇) as co-founder & CTO."
-- date: "2026"
+- date: "2026"     # confirm month
   type: paper
   text: "Memristive in-memory computing paper accepted to **Nature Communications**."
-- date: "2026"
-  type: paper
-  text: "Blind image quality assessment paper accepted to **ACM MM 2026**."
 - date: "2026.05"
   type: paper
   text: "*Dyn-SSM* published in **IEEE TCDS**."
-- date: "2026.02"
-  type: paper
-  text: "Energy-efficient collaborative perception accepted to **IEEE T-ITS**."
 - date: "2025.09"
   type: event
   text: "Started my PhD at City University of Hong Kong."
@@ -37,5 +34,11 @@
   type: talk
   text: "Talk on spiking state space models at the Tsinghua Laboratory of Brain and Intelligence."
 - date: "2024.10"
+  type: talk
+  text: "Invited roadshow for our assistive-AI startup at the China International Digital Economy Expo 2024, Shijiazhuang ([photo](/images/Expo2024.jpg))."
+- date: "2024.10"
   type: event
-  text: "Attended the 2nd Nature Conference on Neuromorphic Computing in Beijing."
+  text: "Attended the 2nd Nature Conference on Neuromorphic Computing in Beijing ([photo](/images/NC2024.jpg))."
+- date: "2023.08"
+  type: visit
+  text: "Visited the School of Computing, National University of Singapore, as a research intern with Prof. Wei Tsang Ooi."

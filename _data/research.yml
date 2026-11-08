@@ -1,17 +1,26 @@
-# Research themes: "side" places the card on the carbon (brain) / silicon (chip) spectrum
-- title: "Spiking & brain-inspired models"
+# Research themes. "id" is referenced by publications (themes: [1, 2]) to show theme icons.
+# "side" places the card on the carbon (brain) / silicon (chip) spectrum.
+- id: 1
+  short: "Auto-discovery"
+  title: "Automated scientific discovery"
+  icon: "fa-solid fa-dna"
+  side: mix
+  text: "LLM-guided evolutionary search and multi-agent systems that propose, test, and refine designs on their own: neural architectures today, algorithms and chip design next."
+- id: 2
+  short: "Brain-inspired"
+  title: "Spiking & brain-inspired learning"
   icon: "fa-solid fa-brain"
   side: carbon
-  text: "Sequence models with neuron-like dynamics that stay sparse, parallel to train, and energy-efficient."
-- title: "Measuring & discovering architectures"
-  icon: "fa-solid fa-diagram-project"
+  text: "Neuron-like dynamics for efficient sequence models, and brain-like ways to learn: online, forward-only, and zeroth-order adaptation."
+- id: 3
+  short: "Understanding ANNs"
+  title: "Understanding modern neural networks"
+  icon: "fa-solid fa-magnifying-glass-chart"
   side: mix
-  text: "Scoring architectures from their specification alone, and using LLM-guided evolution to find architectures built for spiking networks."
-- title: "Learning dynamics & plasticity"
-  icon: "fa-solid fa-wave-square"
-  side: mix
-  text: "When does a network stop being able to learn? Theory of SGD, plasticity, and what self-supervised objectives guarantee."
-- title: "Algorithm–hardware co-design"
+  text: "How today's architectures and optimizers work, and how to use that: capacity measured from the specification alone, SGD and plasticity, efficient deployment."
+- id: 4
+  short: "Hardware"
+  title: "Algorithm–hardware co-design"
   icon: "fa-solid fa-microchip"
   side: silicon
-  text: "Bringing brain-inspired models onto memristor compute-in-memory chips for low-power AI at the edge."
+  text: "Memristor compute-in-memory devices, and bringing brain-inspired models onto them for low-power AI at the edge."

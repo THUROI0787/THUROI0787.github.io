@@ -66,7 +66,7 @@ layout: default
     <!-- ============ News ============ -->
     <section id="news" class="section" style="--t: .2">
       <h2 class="section__title"><span class="section__icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></span>News</h2>
-      {%- assign icons = "paper:fa-file-circle-check,award:fa-trophy,role:fa-rocket,talk:fa-microphone-lines,teach:fa-chalkboard-user,event:fa-location-dot" | split: "," -%}
+      {%- assign icons = "paper:fa-file-circle-check,award:fa-trophy,role:fa-rocket,talk:fa-microphone-lines,project:fa-flask,visit:fa-plane-departure,event:fa-location-dot" | split: "," -%}
       <ul class="news" id="news-list">
         {%- for n in site.data.news %}
         {%- assign ic = "fa-circle" -%}
@@ -85,21 +85,35 @@ layout: default
 
     <!-- ============ Publications ============ -->
     <section id="publications" class="section" style="--t: .45">
-      <h2 class="section__title"><span class="section__icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>Publications</h2>
-      <p class="legend"><sup>*</sup> equal contribution &nbsp;·&nbsp; <i class="fa-regular fa-envelope" aria-hidden="true"></i> corresponding author &nbsp;·&nbsp; <a href="https://scholar.google.com/citations?user=HGeI9_8AAAAJ&hl=en">Full list on Google Scholar</a></p>
+      <h2 class="section__title"><span class="section__icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>Publications &amp; Projects</h2>
+      <p class="legend"><sup>*</sup> equal contribution &nbsp;·&nbsp; <i class="fa-regular fa-envelope" aria-hidden="true"></i> corresponding author &nbsp;·&nbsp; <a href="https://scholar.google.com/citations?user=HGeI9_8AAAAJ&hl=en">Google Scholar</a></p>
+
+      <div class="tfilter" role="group" aria-label="Filter by research theme">
+        <button type="button" class="tfilter__btn is-on" data-theme-filter="all" aria-pressed="true">All</button>
+        {%- for t in site.data.research %}
+        <button type="button" class="tfilter__btn tfilter__btn--{{ t.side }}" data-theme-filter="{{ t.id }}" aria-pressed="false"><i class="{{ t.icon }}" aria-hidden="true"></i>{{ t.short }}</button>
+        {%- endfor %}
+      </div>
 
       <h3 class="sub-title">Selected</h3>
       <div class="pubs">
-        {%- for pub in site.data.publications %}{%- if pub.featured %}
-        <article class="pub">
+        {%- for pub in site.data.publications %}{%- if pub.group == "featured" %}
+        <article class="pub" data-themes="{{ pub.themes | join: ' ' }}">
           <div class="pub__media">
             <img src="{{ pub.image }}" alt="Figure from {{ pub.title }}" width="520" height="325" loading="lazy">
             <span class="badge badge--{{ pub.status }}">{{ pub.badge }}</span>
           </div>
           <div class="pub__body">
-            {%- if pub.role %}<span class="role role--{{ pub.role }}">{% if pub.role == "first" %}First author{% else %}Co-first author{% endif %}</span>{% endif %}
+            <div class="pub__tags">
+              {% include theme-icons.html ids=pub.themes %}
+              {%- if pub.role %}<span class="role role--{{ pub.role }}">{% if pub.role == "first" %}First author{% else %}Co-first author{% endif %}</span>{% endif %}
+            </div>
             <h4 class="pub__title">{{ pub.title }}</h4>
+            {%- if pub.authors.size > 0 %}
             <p class="pub__authors">{% include authors.html authors=pub.authors %}</p>
+            {%- elsif pub.byline %}
+            <p class="pub__authors">{{ pub.byline }}</p>
+            {%- endif %}
             <p class="pub__venue">{{ pub.venue }}</p>
             <p class="pub__tldr">{{ pub.tldr }}</p>
             {%- if pub.links.size > 0 %}
@@ -112,33 +126,22 @@ layout: default
         {%- endif %}{%- endfor %}
       </div>
 
-      {%- assign groups = "published|Published,review|Preprints" | split: "," -%}
-      {%- for g in groups %}
-      {%- assign gk = g | split: "|" -%}
-      {%- capture items -%}
-        {%- for pub in site.data.publications -%}{%- unless pub.featured -%}
-        {%- assign st = pub.status -%}{%- if st == "accepted" -%}{%- assign st = "published" -%}{%- endif -%}
-        {%- if st == gk[0] %}
-        <li class="publist__item">
-          <span class="badge badge--{{ pub.status }}">{{ pub.badge }}</span>
-          <div>
-            <p class="pub__title">{{ pub.title }}{% if pub.role %} <span class="role role--{{ pub.role }}">{% if pub.role == "first" %}First author{% else %}Co-first{% endif %}</span>{% endif %}</p>
-            <p class="pub__authors">{% include authors.html authors=pub.authors %}</p>
-          </div>
-          <div class="publist__links">
-            {%- for l in pub.links %}<a href="{{ l.url }}" title="{{ l.label }}"><i class="{{ l.icon }}" aria-hidden="true"></i><span>{{ l.label }}</span></a>{%- endfor %}
-          </div>
-        </li>
-        {%- endif -%}
-        {%- endunless -%}{%- endfor -%}
-      {%- endcapture -%}
-      {%- assign trimmed = items | strip -%}
-      {%- if trimmed != "" %}
-      <h3 class="sub-title">{% if forloop.first %}Other publications{% else %}{{ gk[1] }}{% endif %}</h3>
-      <ul class="publist">{{ items }}
+      <h3 class="sub-title">More in these directions</h3>
+      <ul class="publist">
+        {%- for pub in site.data.publications %}{%- if pub.group == "main" %}
+        {% include pub-row.html pub=pub %}
+        {%- endif %}{%- endfor %}
       </ul>
-      {%- endif %}
-      {%- endfor %}
+      <p class="tfilter__empty" hidden>No entries for this theme in this list.</p>
+
+      <div class="others">
+        <h3 class="sub-title">Other collaborations</h3>
+        <ul class="publist">
+          {%- for pub in site.data.publications %}{%- if pub.group == "other" %}
+          {% include pub-row.html pub=pub %}
+          {%- endif %}{%- endfor %}
+        </ul>
+      </div>
     </section>
 
     <!-- ============ Experience ============ -->

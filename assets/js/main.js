@@ -32,6 +32,30 @@
     });
   }
 
+  /* ---------- Publication filter by research theme ---------- */
+  var fbtns = Array.prototype.slice.call(document.querySelectorAll("[data-theme-filter]"));
+  if (fbtns.length) {
+    var items = Array.prototype.slice.call(document.querySelectorAll("#publications [data-themes]"));
+    var others = document.querySelector("#publications .others");
+    var empty = document.querySelector(".tfilter__empty");
+    var mainList = document.querySelector("#publications .publist");
+    fbtns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var f = b.getAttribute("data-theme-filter");
+        fbtns.forEach(function (x) { var on = x === b; x.classList.toggle("is-on", on); x.setAttribute("aria-pressed", String(on)); });
+        items.forEach(function (it) {
+          var ids = (it.getAttribute("data-themes") || "").split(" ");
+          it.classList.toggle("is-filtered-out", f !== "all" && ids.indexOf(f) === -1);
+        });
+        if (others) others.hidden = f !== "all";
+        if (empty && mainList) {
+          var visible = mainList.querySelectorAll("[data-themes]:not(.is-filtered-out)").length;
+          empty.hidden = visible > 0;
+        }
+      });
+    });
+  }
+
   /* ---------- Active section in the nav ---------- */
   var links = Array.prototype.slice.call(document.querySelectorAll(".nav a"));
   if ("IntersectionObserver" in window && links.length) {

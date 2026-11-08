@@ -1,0 +1,9 @@
+{%- comment -%} Small icons for the research themes a paper belongs to. {%- endcomment -%}
+{%- if include.ids and include.ids.size > 0 -%}
+<span class="tmarks">
+  {%- for id in include.ids -%}
+  {%- assign th = site.data.research | where: "id", id | first -%}
+  {%- if th %}<span class="tmark tmark--{{ th.side }}" title="{{ th.title }}"><i class="{{ th.icon }}" aria-hidden="true"></i><span class="sr-only">{{ th.title }}</span></span>{% endif -%}
+  {%- endfor -%}
+</span>
+{%- endif -%}

@@ -31,10 +31,11 @@ about:
     I study what brains and silicon each do well, and how the brain's strengths can shape the next
     generation of AI.
   - >-
-    The brain learns continually, computes sparsely, and runs on about 20 watts. I work on carrying
-    those properties into machine learning: spiking and state-space models for efficient long-sequence
-    learning; ways to measure architectures and to discover new ones automatically, including with
-    LLM-guided search; and theory of the learning dynamics that decide whether a network can keep learning.
+    The brain learns continually, computes sparsely, and runs on about 20 watts. My work follows
+    four threads: automating scientific discovery with LLM-guided evolution and multi-agent systems,
+    which we use to design new neural architectures; spiking and brain-inspired models and learning
+    rules; understanding how today's architectures and optimizers work; and co-designing these models
+    with memristor hardware.
   - >-
     I received my B.Eng. in Electronic Engineering from [Tsinghua University](https://www.tsinghua.edu.cn/en/)
     (minor in Statistics), and did research at Tsinghua, UIUC, and NUS. I'm open to research collaborations
