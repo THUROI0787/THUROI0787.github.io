@@ -31,7 +31,7 @@ work:
     place: "Shanghai"
     tag: industry
     detail: "Leading technology and algorithm R&D for brain-inspired AI on memristor-based compute-in-memory chips."
-  - org: "Qingguang Innovation Technology"
+  - org: "Qingguang Innovation Technology Ltd."
     mono: "QG"
     color: "#8e46a0"   # brand purple; wordmark kept in assets/img/logos/qingguang.png
     role: "Lead Developer"

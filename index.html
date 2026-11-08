@@ -126,13 +126,14 @@ layout: default
         {%- endif %}{%- endfor %}
       </div>
 
+      <div class="more">
       <h3 class="sub-title">More in these directions</h3>
       <ul class="publist">
         {%- for pub in site.data.publications %}{%- if pub.group == "main" %}
         {% include pub-row.html pub=pub %}
         {%- endif %}{%- endfor %}
       </ul>
-      <p class="tfilter__empty" hidden>No entries for this theme in this list.</p>
+      </div>
 
       <div class="others">
         <h3 class="sub-title">Other collaborations</h3>

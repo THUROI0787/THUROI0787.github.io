@@ -37,8 +37,7 @@
   if (fbtns.length) {
     var items = Array.prototype.slice.call(document.querySelectorAll("#publications [data-themes]"));
     var others = document.querySelector("#publications .others");
-    var empty = document.querySelector(".tfilter__empty");
-    var mainList = document.querySelector("#publications .publist");
+    var more = document.querySelector("#publications .more");
     fbtns.forEach(function (b) {
       b.addEventListener("click", function () {
         var f = b.getAttribute("data-theme-filter");
@@ -48,10 +47,7 @@
           it.classList.toggle("is-filtered-out", f !== "all" && ids.indexOf(f) === -1);
         });
         if (others) others.hidden = f !== "all";
-        if (empty && mainList) {
-          var visible = mainList.querySelectorAll("[data-themes]:not(.is-filtered-out)").length;
-          empty.hidden = visible > 0;
-        }
+        if (more) more.hidden = more.querySelectorAll("[data-themes]:not(.is-filtered-out)").length === 0;
       });
     });
   }

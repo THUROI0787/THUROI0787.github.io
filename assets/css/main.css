@@ -510,3 +510,4 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.25; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 [hidden] { display: none !important; }
+.au { white-space: nowrap; }

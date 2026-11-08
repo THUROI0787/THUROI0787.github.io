@@ -37,7 +37,7 @@
     - { label: "Project", icon: "fa-solid fa-globe", url: "https://optima-cityu.github.io/OpenArchEvo-SciencePal/" }
 
 # ============ 2 · Spiking & brain-inspired learning ============
-- title: "Dyn-SSM: Towards Efficient Long Sequence Learning via Bio-interpretable Dynamics in Spiking State Space Models"
+- title: "Dyn-SSM: Towards the Efficient Long Sequence Learning via Bio-interpretable Dynamics in Spiking State Space Models"
   authors: ["Yan Zhong*", "Ruoyu Zhao*", "Chao Wang", "Jiaqi He", "Qinghui Guo", "Jianguo Zhang", "Zhichao Lu", "Luziwei Leng^"]
   themes: [2]
   role: co-first
@@ -129,7 +129,7 @@
   venue: "IEEE Transactions on Intelligent Transportation Systems (T-ITS), 2026"
   status: published
   links:
-    - { label: "Paper", icon: "fa-solid fa-file-lines", url: "https://www.techrxiv.org/doi/full/10.36227/techrxiv.174411758.83606894" }
+    - { label: "Preprint", icon: "fa-solid fa-file-lines", url: "https://www.techrxiv.org/doi/full/10.36227/techrxiv.174411758.83606894" }
 
 - title: "Optimization of Layer Skipping and Frequency Scaling for Convolutional Neural Networks under Latency Constraint"
   authors: ["Minh D. Thao Chan*", "Ruoyu Zhao*", "Yukuan Jia", "Ruiqing Mao", "Sheng Zhou^"]

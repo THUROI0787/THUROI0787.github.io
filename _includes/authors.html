@@ -2,8 +2,10 @@
 {%- assign me = "Ruoyu Zhao" -%}
 {%- for a in include.authors -%}
   {%- assign clean = a | remove: "*" | remove: "^" -%}
+  <span class="au">
   {%- if clean == me -%}<strong class="me">{{ clean }}</strong>{%- else -%}{{ clean }}{%- endif -%}
   {%- if a contains "*" -%}<sup title="Equal contribution">*<span class="sr-only"> equal contribution</span></sup>{%- endif -%}
   {%- if a contains "^" -%}<sup class="corr" title="Corresponding author"><i class="fa-regular fa-envelope" aria-hidden="true"></i><span class="sr-only">corresponding author</span></sup>{%- endif -%}
+  </span>
   {%- unless forloop.last -%}, {% endunless -%}
 {%- endfor -%}
