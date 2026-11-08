@@ -1,62 +1,79 @@
-# Publications, newest first.
+# Publications.
 # authors: "*" after a name = equal contribution, "^" = corresponding author.
-# featured: true shows a large card with image and summary; others go to the compact list.
-# status: published | accepted | review
+# role: first | co-first  (adds a small tag on the card)
+# featured: true -> large "Selected" card with figure + summary, shown in file order.
+# Non-featured papers go to the compact list, split by status:
+#   published / accepted -> "Published"   ·   review -> "Preprints"
 
-- title: "Neural Spectral Capacity: An Architectural Quantity from Network Specification Alone"
+# ---------------- Selected (his own line of work first) ----------------
+- title: "Dyn-SSM: Towards Efficient Long Sequence Learning via Bio-interpretable Dynamics in Spiking State Space Models"
+  authors: ["Yan Zhong*", "Ruoyu Zhao*", "Chao Wang", "Jiaqi He", "Qinghui Guo", "Jianguo Zhang", "Zhichao Lu", "Luziwei Leng^"]
+  role: co-first
+  badge: "IEEE TCDS"
+  venue: "IEEE Transactions on Cognitive and Developmental Systems (TCDS), 2026"
+  status: published
+  featured: true
+  image: /assets/img/papers/dyn-ssm.webp
+  tldr: "Spiking state space models that keep bio-interpretable neuron dynamics yet still train in parallel, reaching high sparsity and strong accuracy on long-sequence benchmarks."
+  links:
+    - { label: "Paper", icon: "fa-solid fa-file-lines", url: "https://ieeexplore.ieee.org/document/11541194" }
+
+- title: "Large Language Model-Guided Evolutionary Discovery of Native Neural Architectures for Spiking Sequence Modeling"
+  authors: ["Ruoyu Zhao*", "Jiaqi Wu*", "Chenyu Zhu", "Zhichao Lu^"]
+  role: co-first
+  badge: "Preprint"
+  venue: "Preprint · under review"
+  status: review
+  featured: true
+  image: /assets/img/papers/openarchevo.webp
+  tldr: "OpenArchEvo lets LLMs evolve executable architecture code in an open program space. Its NeuroGate design outperforms DeltaNet on WikiText-103, and discovered models cut estimated energy by up to 50.6× versus a dense Transformer."
+  links:
+    - { label: "arXiv", icon: "fa-solid fa-file-pdf", url: "https://arxiv.org/abs/2609.40258" }
+    - { label: "Code", icon: "fa-brands fa-github", url: "https://github.com/Optima-CityU/OpenArchEvo" }
+    - { label: "Project", icon: "fa-solid fa-globe", url: "https://optima-cityu.github.io/OpenArchEvo/" }
+
+- title: "Neural Spectral Capacity: Measuring and Designing Architectures from Network Specification Alone"
   authors: ["Chenyu Zhu", "Ruoyu Zhao", "Zhichao Lu^"]
   badge: "NeurIPS 2026"
   venue: "Advances in Neural Information Processing Systems (NeurIPS), 2026"
   status: accepted
   featured: true
   image: /assets/img/papers/nsc.webp
-  tldr: "A closed-form, spectrum-based measure of architectural capacity computed from the specification alone, with an exact solver that finds the best architecture under a budget in seconds on a CPU."
+  tldr: "A closed-form, spectrum-based capacity score computed from the architecture specification alone, with a dynamic-programming solver. It ranks architectures better than #Params, #FLOPs and training-free proxies across seven families, and prunes LLaMA-7B to 5.7B without calibration data."
   links:
-    - { label: "arXiv", icon: "ai ai-arxiv", url: "https://arxiv.org/abs/2609.23087" }
+    - { label: "arXiv", icon: "fa-solid fa-file-pdf", url: "https://arxiv.org/abs/2609.23087" }
 
+- title: "Rare Gate Disagreements Can Limit Plasticity: When Gradient Flow Mispredicts Finite-Batch SGD"
+  authors: ["Ruoyu Zhao", "Mingxuan Zhang", "Jianbo Dai", "Jiaqi Wu", "Chenyu Zhu", "Tong Che^"]
+  role: first
+  badge: "Preprint"
+  venue: "Preprint · under review"
+  status: review
+  featured: true
+  image: /assets/img/papers/rare-gate.webp
+  tldr: "Gradient flow predicts that a pretrained network recovers on a new task, yet finite-batch SGD can fail for a horizon exponential in 1/η. We trace the gap to rarely sampled inputs on which ReLU gates disagree."
+  links:
+    - { label: "arXiv", icon: "fa-solid fa-file-pdf", url: "https://arxiv.org/abs/2610.11475" }
+
+- title: "Shared Gaussianization: What Gaussian Regularizers Certify About Contrastive Learning, and What They Miss"
+  authors: ["Ruoyu Zhao", "Yuting Chen", "Jinheng Zhang", "Zhehao Zou", "Tong Che^"]
+  role: first
+  badge: "Preprint"
+  venue: "Preprint · under review"
+  status: review
+  featured: true
+  image: /assets/img/papers/shared-gauss.webp
+  tldr: "A Gaussianity test on averaged views vanishes exactly at InfoNCE's optima and sharply bounds its excess risk; away from the optimum, it needs an explicit alignment term to avoid keeping per-view nuisance."
+  links:
+    - { label: "arXiv", icon: "fa-solid fa-file-pdf", url: "https://arxiv.org/abs/2610.10299" }
+
+# ---------------- Other published / accepted ----------------
 - title: "Fast and robust memristive cell based on 2D materials for energy-efficient in-memory computing"
   authors: ["Yuwan Hong", "Yanming Liu", "Ruoyu Zhao", "Zijun Wang", "Zhongyuan Pang", "Zhibin Wang", "Yuyang Peng", "Peigen Zhang", "Yizhe Guo", "Anhan Liu", "Ao Tian", "Songang Peng", "Hao Guo", "He Tian^", "Tian-Ling Ren"]
   badge: "Nature Commun."
   venue: "Nature Communications, accepted (IF 18.1)"
   status: accepted
-  featured: true
-  image: /assets/img/papers/memristor.svg
-  tldr: "A high-speed, robust memristive cell built on 2D materials, aimed at energy-efficient compute-in-memory hardware."
   links: []
-
-- title: "Large Language Model-Guided Evolutionary Discovery of Native Neural Architectures for Spiking Sequence Modeling"
-  authors: ["Ruoyu Zhao*", "Jiaqi Wu*", "Chenyu Zhu", "Zhichao Lu^"]
-  badge: "Under review"
-  venue: "IEEE Transactions on Evolutionary Computation (TEVC), under review (IF 16.0)"
-  status: review
-  featured: true
-  image: /assets/img/papers/openarchevo.webp
-  tldr: "OpenArchEvo lets LLMs evolve executable architecture code in an open program space, discovering native spiking architectures for low-energy sequence modeling."
-  links:
-    - { label: "arXiv", icon: "ai ai-arxiv", url: "https://arxiv.org/abs/2609.40258" }
-    - { label: "Project", icon: "fa-solid fa-globe", url: "https://optima-cityu.github.io/OpenArchEvo/" }
-
-- title: "Shared Gaussianization: What Gaussian Regularizers Certify About Contrastive Learning, and What They Miss"
-  authors: ["Ruoyu Zhao", "Yuting Chen", "Jinheng Zhang", "Zhehao Zou", "Tong Che^"]
-  badge: "Under review"
-  venue: "AISTATS 2027, under review"
-  status: review
-  featured: true
-  image: /assets/img/papers/shared-gauss.webp
-  tldr: "One Gaussianity test on averaged views detects both misalignment and non-uniformity, with a sharp bound on the InfoNCE excess, and a clear account of what it cannot see."
-  links:
-    - { label: "arXiv", icon: "ai ai-arxiv", url: "https://arxiv.org/abs/2610.10299" }
-
-- title: "Rare Gate Disagreements Can Limit Plasticity: When Gradient Flow Mispredicts Finite-Batch SGD"
-  authors: ["Ruoyu Zhao", "Mingxuan Zhang", "Jianbo Dai", "Jiaqi Wu", "Chenyu Zhu", "Tong Che^"]
-  badge: "Under review"
-  venue: "AISTATS 2027, under review"
-  status: review
-  featured: true
-  image: /assets/img/papers/rare-gate.webp
-  tldr: "Gradient flow predicts quick recovery after pretraining, but finite-batch SGD can fail for exponentially long; we trace the gap to rare gate disagreements."
-  links:
-    - { label: "arXiv", icon: "ai ai-arxiv", url: "https://arxiv.org/abs/2610.11475" }
 
 - title: "Generalizable Blind Image Quality Assessment with Retrieval Augmentation and Contrastive Vision-Text Local Meta-Training"
   authors: ["Yan Zhong", "Zhiyuan You", "Xinping Zhao", "Li Zhang", "Xinyuan Song", "Ruoyu Zhao", "Lei Shi", "Tingting Jiang^"]
@@ -65,17 +82,6 @@
   status: accepted
   links:
     - { label: "Paper", icon: "fa-solid fa-file-lines", url: "https://doi.org/10.1145/3767308.3836240" }
-
-- title: "Dyn-SSM: Towards Efficient Long Sequence Learning via Bio-interpretable Dynamics in Spiking State Space Models"
-  authors: ["Yan Zhong*", "Ruoyu Zhao*", "Chao Wang", "Jiaqi He", "Qinghui Guo", "Jianguo Zhang", "Zhichao Lu", "Luziwei Leng^"]
-  badge: "IEEE TCDS"
-  venue: "IEEE Transactions on Cognitive and Developmental Systems (TCDS), 2026"
-  status: published
-  featured: true
-  image: /assets/img/papers/dyn-ssm.webp
-  tldr: "Spiking state space models with soft-reset neuron dynamics, a parallel boundary-compression scheme for training, and high sparsity on long-sequence benchmarks."
-  links:
-    - { label: "Paper", icon: "fa-solid fa-file-lines", url: "https://ieeexplore.ieee.org/document/11541194" }
 
 - title: "Energy-Efficient Collaborative Perception: A Block-Skipping DNN Approach with Dynamic Frequency Scaling and Environment Awareness"
   authors: ["Minh D. Thao Chan", "Ruoyu Zhao", "Yukuan Jia", "Zhaojun Nan", "Sheng Zhou^", "Zhisheng Niu"]
@@ -98,15 +104,13 @@
   badge: "ICLR 2025"
   venue: "International Conference on Learning Representations (ICLR), 2025"
   status: published
-  featured: true
-  image: /assets/img/papers/diff2in1.webp
-  tldr: "One diffusion model that both generates multi-modal data and performs dense perception, using its own synthetic data to improve the perception side."
   links:
     - { label: "OpenReview", icon: "fa-solid fa-file-lines", url: "https://openreview.net/forum?id=ZYd5wJSaMs" }
-    - { label: "arXiv", icon: "ai ai-arxiv", url: "https://arxiv.org/abs/2411.05005" }
+    - { label: "arXiv", icon: "fa-solid fa-file-pdf", url: "https://arxiv.org/abs/2411.05005" }
 
 - title: "Optimization of Layer Skipping and Frequency Scaling for Convolutional Neural Networks under Latency Constraint"
   authors: ["Minh D. Thao Chan*", "Ruoyu Zhao*", "Yukuan Jia", "Ruiqing Mao", "Sheng Zhou^"]
+  role: co-first
   badge: "ECCV-W 2024"
   venue: "1st Workshop on Cooperative Intelligence for Embodied AI, ECCV 2024"
   status: published

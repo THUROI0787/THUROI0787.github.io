@@ -57,7 +57,7 @@ work:
     detail: "Parallel soft-reset spiking neurons for long-sequence spiking SSMs."
   - org: "University of Illinois Urbana-Champaign"
     mono: "UIUC"
-    color: "#e84a27"
+    color: "#c43d1b"
     role: "Research Assistant · Prof. Yu-Xiong Wang"
     dates: "2023.10 – 2024.01"
     place: "Remote"

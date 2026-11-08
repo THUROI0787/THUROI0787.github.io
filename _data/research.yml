@@ -1,17 +1,17 @@
 # Research themes: "side" places the card on the carbon (brain) / silicon (chip) spectrum
-- title: "Brain-inspired computation"
+- title: "Spiking & brain-inspired models"
   icon: "fa-solid fa-brain"
   side: carbon
-  text: "Spiking neurons and state space models that keep rich neural dynamics while staying sparse, parallel, and energy-efficient on long sequences."
-- title: "Neural architecture"
+  text: "Sequence models with neuron-like dynamics that stay sparse, parallel to train, and energy-efficient."
+- title: "Measuring & discovering architectures"
   icon: "fa-solid fa-diagram-project"
   side: mix
-  text: "Measuring architectures from their specification alone, and letting LLM-guided evolution discover native spiking architectures."
-- title: "Learning dynamics & theory"
+  text: "Scoring architectures from their specification alone, and using LLM-guided evolution to find architectures built for spiking networks."
+- title: "Learning dynamics & plasticity"
   icon: "fa-solid fa-wave-square"
   side: mix
-  text: "When gradient flow mispredicts SGD, what Gaussian regularizers certify about contrastive learning, and what limits plasticity."
-- title: "Hardware co-design"
+  text: "When does a network stop being able to learn? Theory of SGD, plasticity, and what self-supervised objectives guarantee."
+- title: "Algorithm–hardware co-design"
   icon: "fa-solid fa-microchip"
   side: silicon
-  text: "Memristor-based compute-in-memory devices and algorithm–chip co-design for low-latency AI at the edge."
+  text: "Bringing brain-inspired models onto memristor compute-in-memory chips for low-power AI at the edge."

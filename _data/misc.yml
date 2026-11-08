@@ -8,8 +8,8 @@ honors:
   - { year: "2023", text: "Zheng Gang Overseas Study Scholarship (4/250), Dept. EE, Tsinghua" }
 
 teaching:
-  - { term: "Fall 2026", text: "CS5491 Artificial Intelligence, CityU — Teaching Assistant" }
-  - { term: "Fall 2024, Spring 2025", text: "Design and Practice of Intelligent Robots, Tsinghua — Teaching Assistant" }
+  - { term: "Fall 2026", text: "CS5491 Artificial Intelligence, CityU — TA (Instructor: Prof. Zhichao Lu)" }
+  - { term: "Fall 2024, Spring 2025", text: "Design and Practice of Intelligent Robots, Tsinghua — TA (Profs. Miling Zhang & Yueqi Duan)" }
 
 reviewing:
   - { kind: "Conferences", text: "NeurIPS, ICML, ICLR, AAAI, IJCAI, AISTATS, ACM MM, CPAL" }

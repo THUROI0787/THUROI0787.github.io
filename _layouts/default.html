@@ -9,8 +9,9 @@
   <meta property="og:title" content="{{ site.title }}">
   <meta property="og:description" content="{{ site.description | strip }}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ site.url }}">
-  <meta property="og:image" content="{{ site.url }}{{ site.data.profile.avatar }}">
+  <meta property="og:url" content="{{ site.url }}/">
+  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="{{ site.url }}/images/avatar_config1.png">
   <link rel="canonical" href="{{ site.url }}/">
   <link rel="icon" href="/images/favicon.ico">
   <meta name="theme-color" content="#0a0f1d">
@@ -20,7 +21,11 @@
     (function () {
       var t = null;
       try { t = localStorage.getItem('theme'); } catch (e) {}
-      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      if (t !== 'light' && t !== 'dark') {
+        t = (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      window.__theme = t;
     })();
   </script>
 
@@ -30,6 +35,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
   <link rel="stylesheet" href="/assets/css/main.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Person","name":"{{ site.data.profile.name }}","alternateName":"{{ site.data.profile.nickname }}","url":"{{ site.url }}/","image":"{{ site.url }}{{ site.data.profile.avatar }}","jobTitle":"PhD Student; Co-founder & CTO of BrainGalaxy","affiliation":[{"@type":"CollegeOrUniversity","name":"City University of Hong Kong"},{"@type":"Organization","name":"BrainGalaxy","url":"https://brain-galaxy.omniex.ai/"}],"alumniOf":"Tsinghua University","sameAs":[{% for l in site.data.profile.links %}{% unless l.url contains 'mailto' or l.url contains '/files/' %}"{{ l.url }}",{% endunless %}{% endfor %}"{{ site.url }}/"]}
+  </script>
 </head>
 <body>
   <canvas id="neural-bg" aria-hidden="true"></canvas>
@@ -48,7 +56,7 @@
         <a href="#honors">Honors</a>
         <a href="#service">Service</a>
       </nav>
-      <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+      <button class="theme-toggle" type="button" aria-label="Dark theme" aria-pressed="true">
         <i class="fa-solid fa-moon" aria-hidden="true"></i>
         <i class="fa-solid fa-sun" aria-hidden="true"></i>
       </button>
@@ -61,6 +69,12 @@
     <p>© {{ site.time | date: "%Y" }} {{ site.data.profile.name }} · Last updated {{ site.time | date: "%b %Y" }}</p>
   </footer>
 
+  <script>
+    (function () {
+      var b = document.querySelector('.theme-toggle');
+      if (b) b.setAttribute('aria-pressed', String(window.__theme !== 'light'));
+    })();
+  </script>
   <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

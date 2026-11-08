@@ -13,6 +13,9 @@
     toggle.addEventListener("click", function () {
       var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
       root.setAttribute("data-theme", next);
+      toggle.setAttribute("aria-pressed", String(next === "dark"));
+      var tc = document.querySelector('meta[name="theme-color"]');
+      if (tc) tc.setAttribute("content", next === "light" ? "#f5f7fb" : "#0a0f1d");
       try { localStorage.setItem("theme", next); } catch (e) {}
       if (bg) bg.refresh();
     });
@@ -22,7 +25,6 @@
   var moreBtn = document.querySelector('[data-toggle="news"]');
   var newsList = document.querySelector(".news");
   if (moreBtn && newsList) {
-    moreBtn.setAttribute("aria-expanded", "false");
     moreBtn.addEventListener("click", function () {
       var open = newsList.classList.toggle("is-open");
       moreBtn.setAttribute("aria-expanded", String(open));
@@ -62,7 +64,22 @@
     var W = 0, H = 0, DPR = 1;
     var nodes = [], edges = [], pulses = [];
     var colA, colB, alphaEdge, alphaNode;
-    var raf = null, lastSpawn = 0;
+    var raf = null, lastSpawn = 0, lastFrame = 0, edgeMap = {}, glowA = null, glowB = null;
+    var colL = 0, colR = 0; // x-range of the text column, where the network is dimmed
+
+    // 1 outside the text column, ~0.35 inside it, with soft edges
+    function dim(x) {
+      if (colR <= colL) return 1;
+      var edge = 60;
+      var inside = smooth(colL - edge, colL + edge, x) * (1 - smooth(colR - edge, colR + edge, x));
+      return 1 - 0.65 * inside;
+    }
+    function measureColumn() {
+      var el = document.querySelector(".content");
+      if (!el) { colL = colR = 0; return; }
+      var r = el.getBoundingClientRect();
+      colL = r.left - 24; colR = r.right + 24;
+    }
 
     function hexToRgb(h) {
       h = h.trim().replace("#", "");
@@ -85,11 +102,21 @@
       var light = root.getAttribute("data-theme") === "light";
       alphaEdge = light ? 0.13 : 0.16;
       alphaNode = light ? 0.35 : 0.42;
+      glowA = sprite(colA); glowB = sprite(colB);
+    }
+
+    // pre-rendered glow, much cheaper than shadowBlur every frame
+    function sprite(c) {
+      var s = document.createElement("canvas"); s.width = s.height = 32;
+      var g = s.getContext("2d"), r = g.createRadialGradient(16, 16, 0, 16, 16, 16);
+      r.addColorStop(0, rgba(c, 0.95)); r.addColorStop(0.25, rgba(c, 0.5)); r.addColorStop(1, rgba(c, 0));
+      g.fillStyle = r; g.fillRect(0, 0, 32, 32);
+      return s;
     }
 
     function build() {
       seed = 20260808;
-      nodes = []; edges = []; pulses = [];
+      nodes = []; edges = []; pulses = []; edgeMap = {};
       var count = Math.min(120, Math.max(40, Math.round((W * H) / 16000)));
       var grid = 46;
       for (var i = 0; i < count; i++) {
@@ -142,6 +169,7 @@
       }
       var e = { a: i, b: j, pts: pts, blend: blend };
       edges.push(e);
+      edgeMap[i + "-" + j] = edgeMap[j + "-" + i] = e;
       A.links.push(j); B.links.push(i);
       e.id = edges.length - 1;
     }
@@ -156,8 +184,8 @@
       edges.forEach(function (e) {
         var A = nodes[e.a], B = nodes[e.b];
         var g = lctx.createLinearGradient(A.x, A.y, B.x, B.y);
-        g.addColorStop(0, rgba(colorAt(A.t), alphaEdge));
-        g.addColorStop(1, rgba(colorAt(B.t), alphaEdge));
+        g.addColorStop(0, rgba(colorAt(A.t), alphaEdge * dim(A.x)));
+        g.addColorStop(1, rgba(colorAt(B.t), alphaEdge * dim(B.x)));
         lctx.strokeStyle = g;
         lctx.lineWidth = 1 + (1 - e.blend) * 0.3;
         lctx.beginPath();
@@ -165,7 +193,7 @@
         for (var s = 1; s < e.pts.length; s++) lctx.lineTo(e.pts[s][0], e.pts[s][1]);
         lctx.stroke();
       });
-      nodes.forEach(function (n) { drawNode(lctx, n, alphaNode, 0); });
+      nodes.forEach(function (n) { drawNode(lctx, n, alphaNode * dim(n.x), 0); });
     }
 
     function drawNode(c, n, alpha, extra) {
@@ -185,11 +213,7 @@
       var n = nodes[ni];
       if (!n || !n.links.length) return;
       var to = n.links[(Math.random() * n.links.length) | 0];
-      var edge = null;
-      for (var i = 0; i < edges.length; i++) {
-        var e = edges[i];
-        if ((e.a === ni && e.b === to) || (e.b === ni && e.a === to)) { edge = e; break; }
-      }
+      var edge = edgeMap[ni + "-" + to];
       if (!edge) return;
       pulses.push({ e: edge, forward: edge.a === ni, p: 0, speed: 0.008 + Math.random() * 0.008, to: to });
     }
@@ -201,6 +225,9 @@
     }
 
     function frame(ts) {
+      // ~30 fps is plenty for a background
+      if (ts - lastFrame < 33) { raf = requestAnimationFrame(frame); return; }
+      lastFrame = ts;
       ctx.setTransform(1, 0, 0, 1, 0, 0);
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.drawImage(layer, 0, 0);
@@ -216,16 +243,13 @@
         var tailP = pu.forward ? Math.max(0, pu.p - 0.18) : Math.min(1, 1 - pu.p + 0.18);
         var h = pointOn(pu.e, Math.min(1, Math.max(0, head)));
         var tp = pointOn(pu.e, tailP);
-        var col = colorAt(h[0] / W);
-        var grad = ctx.createLinearGradient(tp[0], tp[1], h[0], h[1]);
-        grad.addColorStop(0, rgba(col, 0));
-        grad.addColorStop(1, rgba(col, 0.7));
-        ctx.strokeStyle = grad; ctx.lineWidth = 1.6;
+        var col = colorAt(h[0] / W), k = dim(h[0]);
+        ctx.strokeStyle = rgba(col, 0.4 * k); ctx.lineWidth = 1.4;
         ctx.beginPath(); ctx.moveTo(tp[0], tp[1]); ctx.lineTo(h[0], h[1]); ctx.stroke();
-        ctx.fillStyle = rgba(col, 0.85);
-        ctx.shadowColor = rgba(col, 0.9); ctx.shadowBlur = 10;
-        ctx.beginPath(); ctx.arc(h[0], h[1], 1.8, 0, Math.PI * 2); ctx.fill();
-        ctx.shadowBlur = 0;
+        var wb = smooth(0.2, 0.85, h[0] / W);
+        ctx.globalAlpha = (1 - wb) * k; ctx.drawImage(glowA, h[0] - 8, h[1] - 8, 16, 16);
+        ctx.globalAlpha = wb * k;       ctx.drawImage(glowB, h[0] - 8, h[1] - 8, 16, 16);
+        ctx.globalAlpha = 1;
         if (pu.p >= 1) {
           pulses.splice(i, 1);
           var target = nodes[pu.to];
@@ -237,10 +261,10 @@
 
       nodes.forEach(function (n) {
         if (n.flash > 0.02) {
-          var col = colorAt(n.t);
-          ctx.fillStyle = rgba(col, 0.25 * n.flash);
+          var col = colorAt(n.t), kk = dim(n.x);
+          ctx.fillStyle = rgba(col, 0.25 * n.flash * kk);
           ctx.beginPath(); ctx.arc(n.x, n.y, 4 + 10 * (1 - n.flash), 0, Math.PI * 2); ctx.fill();
-          drawNode(ctx, n, 0.9 * n.flash, 1.2 * n.flash);
+          drawNode(ctx, n, 0.9 * n.flash * kk, 1.2 * n.flash);
           n.flash *= 0.94;
         }
       });
@@ -249,10 +273,10 @@
     }
 
     function resize() {
-      DPR = Math.min(window.devicePixelRatio || 1, 2);
+      DPR = Math.min(window.devicePixelRatio || 1, 1.5);
       W = window.innerWidth; H = window.innerHeight;
       canvas.width = W * DPR; canvas.height = H * DPR;
-      build(); drawLayer();
+      measureColumn(); build(); drawLayer();
       if (reduceMotion) { ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, canvas.width, canvas.height); ctx.drawImage(layer, 0, 0); }
     }
 
@@ -269,6 +293,14 @@
         if (Math.abs(window.innerWidth - W) > 2 || Math.abs(window.innerHeight - H) > 120) resize();
       }, 150);
     });
+    // re-render when the window moves to a screen with a different pixel ratio
+    function watchDpr() {
+      if (!window.matchMedia) return;
+      var mq = matchMedia("(resolution: " + (window.devicePixelRatio || 1) + "dppx)");
+      var h = function () { resize(); watchDpr(); };
+      if (mq.addEventListener) mq.addEventListener("change", h, { once: true });
+    }
+    watchDpr();
     document.addEventListener("visibilitychange", function () { document.hidden ? stop() : start(); });
 
     return { refresh: function () { readColors(); drawLayer(); if (reduceMotion) resize(); } };

@@ -2,7 +2,7 @@
 # DRAFT: dates and wording to be confirmed with Roi.
 - date: "2026.10"
   type: paper
-  text: "Two papers on contrastive learning theory and SGD plasticity submitted to AISTATS 2027."
+  text: "New preprints on [SGD plasticity](https://arxiv.org/abs/2610.11475) and [Gaussian regularizers in contrastive learning](https://arxiv.org/abs/2610.10299)."
 - date: "2026.09"
   type: paper
   text: "*Neural Spectral Capacity* accepted to **NeurIPS 2026**."

@@ -26,27 +26,32 @@ layout: default
         <li><a href="{{ l.url }}" aria-label="{{ l.label }}" title="{{ l.label }}"><i class="{{ l.icon }}" aria-hidden="true"></i></a></li>
         {%- endfor %}
       </ul>
-      <div class="profile__focus">
-        <h2 class="mini-title">Research focus</h2>
-        <ul class="chips">
-          {%- for f in p.focus %}<li>{{ f }}</li>{%- endfor %}
-        </ul>
-      </div>
     </div>
   </aside>
 
   <main id="main" class="content">
 
     <!-- ============ About ============ -->
-    <section id="about" class="section">
-      <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>carbon ⇄ silicon</p>
-      <h2 class="hero">{{ p.tagline }}</h2>
+    <section id="about" class="section" style="--t: 0">
+      <p class="eyebrow"><i class="fa-solid fa-brain eyebrow__carbon" aria-hidden="true"></i><span>carbon</span><span class="pulse" aria-hidden="true"></span><span>silicon</span><i class="fa-solid fa-microchip eyebrow__silicon" aria-hidden="true"></i></p>
+      <h2 class="hero"><span>{{ p.tagline }}</span></h2>
       <div class="prose">
         {%- for para in p.about %}
         {{ para | markdownify }}
         {%- endfor %}
       </div>
 
+      {%- assign su = p.startup %}
+      <a class="startup" href="{{ su.url }}">
+        <img class="startup__logo" src="{{ su.logo }}" alt="{{ su.name }} logo" width="52" height="52">
+        <div class="startup__body">
+          <p class="startup__head"><strong>{{ su.name }}</strong> <span class="startup__cn">{{ su.name_cn }}</span><span class="startup__role">{{ su.role }}</span></p>
+          <p class="startup__text">{{ su.text }}</p>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square startup__go" aria-hidden="true"></i>
+      </a>
+
+      <h3 class="sub-title">Research themes</h3>
       <div class="themes">
         {%- for t in site.data.research %}
         <article class="theme theme--{{ t.side }}">
@@ -59,27 +64,27 @@ layout: default
     </section>
 
     <!-- ============ News ============ -->
-    <section id="news" class="section">
+    <section id="news" class="section" style="--t: .2">
       <h2 class="section__title"><span class="section__icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></span>News</h2>
       {%- assign icons = "paper:fa-file-circle-check,award:fa-trophy,role:fa-rocket,talk:fa-microphone-lines,teach:fa-chalkboard-user,event:fa-location-dot" | split: "," -%}
-      <ul class="news">
+      <ul class="news" id="news-list">
         {%- for n in site.data.news %}
         {%- assign ic = "fa-circle" -%}
         {%- for pair in icons -%}{%- assign kv = pair | split: ":" -%}{%- if kv[0] == n.type -%}{%- assign ic = kv[1] -%}{%- endif -%}{%- endfor -%}
         <li class="news__item news__item--{{ n.type }}{% if forloop.index > 6 %} is-extra{% endif %}">
-          <time>{{ n.date }}</time>
+          <time datetime="{{ n.date | replace: '.', '-' }}">{{ n.date }}</time>
           <span class="news__icon"><i class="fa-solid {{ ic }}" aria-hidden="true"></i></span>
           <span class="news__text">{{ n.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span>
         </li>
         {%- endfor %}
       </ul>
       {%- if site.data.news.size > 6 %}
-      <button class="more-btn" type="button" data-toggle="news">Show all news <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+      <button class="more-btn" type="button" data-toggle="news" aria-expanded="false" aria-controls="news-list">Show all news <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
       {%- endif %}
     </section>
 
     <!-- ============ Publications ============ -->
-    <section id="publications" class="section">
+    <section id="publications" class="section" style="--t: .45">
       <h2 class="section__title"><span class="section__icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>Publications</h2>
       <p class="legend"><sup>*</sup> equal contribution &nbsp;·&nbsp; <i class="fa-regular fa-envelope" aria-hidden="true"></i> corresponding author &nbsp;·&nbsp; <a href="https://scholar.google.com/citations?user=HGeI9_8AAAAJ&hl=en">Full list on Google Scholar</a></p>
 
@@ -88,10 +93,11 @@ layout: default
         {%- for pub in site.data.publications %}{%- if pub.featured %}
         <article class="pub">
           <div class="pub__media">
-            <img src="{{ pub.image }}" alt="Figure from {{ pub.title }}" loading="lazy">
+            <img src="{{ pub.image }}" alt="Figure from {{ pub.title }}" width="520" height="325" loading="lazy">
             <span class="badge badge--{{ pub.status }}">{{ pub.badge }}</span>
           </div>
           <div class="pub__body">
+            {%- if pub.role %}<span class="role role--{{ pub.role }}">{% if pub.role == "first" %}First author{% else %}Co-first author{% endif %}</span>{% endif %}
             <h4 class="pub__title">{{ pub.title }}</h4>
             <p class="pub__authors">{% include authors.html authors=pub.authors %}</p>
             <p class="pub__venue">{{ pub.venue }}</p>
@@ -106,25 +112,37 @@ layout: default
         {%- endif %}{%- endfor %}
       </div>
 
-      <h3 class="sub-title">Other publications</h3>
-      <ul class="publist">
-        {%- for pub in site.data.publications %}{%- unless pub.featured %}
+      {%- assign groups = "published|Published,review|Preprints" | split: "," -%}
+      {%- for g in groups %}
+      {%- assign gk = g | split: "|" -%}
+      {%- capture items -%}
+        {%- for pub in site.data.publications -%}{%- unless pub.featured -%}
+        {%- assign st = pub.status -%}{%- if st == "accepted" -%}{%- assign st = "published" -%}{%- endif -%}
+        {%- if st == gk[0] %}
         <li class="publist__item">
           <span class="badge badge--{{ pub.status }}">{{ pub.badge }}</span>
           <div>
-            <p class="pub__title">{{ pub.title }}</p>
+            <p class="pub__title">{{ pub.title }}{% if pub.role %} <span class="role role--{{ pub.role }}">{% if pub.role == "first" %}First author{% else %}Co-first{% endif %}</span>{% endif %}</p>
             <p class="pub__authors">{% include authors.html authors=pub.authors %}</p>
           </div>
           <div class="publist__links">
             {%- for l in pub.links %}<a href="{{ l.url }}" title="{{ l.label }}"><i class="{{ l.icon }}" aria-hidden="true"></i><span>{{ l.label }}</span></a>{%- endfor %}
           </div>
         </li>
-        {%- endunless %}{%- endfor %}
+        {%- endif -%}
+        {%- endunless -%}{%- endfor -%}
+      {%- endcapture -%}
+      {%- assign trimmed = items | strip -%}
+      {%- if trimmed != "" %}
+      <h3 class="sub-title">{% if forloop.first %}Other publications{% else %}{{ gk[1] }}{% endif %}</h3>
+      <ul class="publist">{{ items }}
       </ul>
+      {%- endif %}
+      {%- endfor %}
     </section>
 
     <!-- ============ Experience ============ -->
-    <section id="experience" class="section">
+    <section id="experience" class="section" style="--t: .65">
       <h2 class="section__title"><span class="section__icon"><i class="fa-solid fa-route" aria-hidden="true"></i></span>Experience</h2>
       <ol class="timeline">
         {%- for e in site.data.experience.work %}
@@ -161,7 +179,7 @@ layout: default
     </section>
 
     <!-- ============ Honors ============ -->
-    <section id="honors" class="section">
+    <section id="honors" class="section" style="--t: .85">
       <h2 class="section__title"><span class="section__icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>Honors &amp; Awards</h2>
       <ul class="rows">
         {%- for h in site.data.misc.honors %}
@@ -171,7 +189,7 @@ layout: default
     </section>
 
     <!-- ============ Teaching & Service ============ -->
-    <section id="service" class="section">
+    <section id="service" class="section" style="--t: 1">
       <h2 class="section__title"><span class="section__icon"><i class="fa-solid fa-people-group" aria-hidden="true"></i></span>Teaching &amp; Service</h2>
       <div class="split">
         <div>
