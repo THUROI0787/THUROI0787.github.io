@@ -1,0 +1,197 @@
+---
+layout: default
+---
+{%- assign p = site.data.profile -%}
+<div class="shell" id="top">
+
+  <!-- ============ Sidebar profile card ============ -->
+  <aside class="profile" aria-label="Profile">
+    <div class="profile__card">
+      <div class="avatar">
+        <img src="{{ p.avatar }}" alt="Portrait of {{ p.name }}" width="140" height="140">
+      </div>
+      <h1 class="profile__name">{{ p.name }}</h1>
+      <p class="profile__nick">{{ p.nickname }}</p>
+      <ul class="profile__roles">
+        {%- for r in p.roles %}
+        <li><a href="{{ r.url }}">{{ r.text }}</a></li>
+        {%- endfor %}
+      </ul>
+      <ul class="profile__meta">
+        <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ p.location }}</li>
+        <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:{{ p.email }}">{{ p.email }}</a></li>
+      </ul>
+      <ul class="profile__links">
+        {%- for l in p.links %}
+        <li><a href="{{ l.url }}" aria-label="{{ l.label }}" title="{{ l.label }}"><i class="{{ l.icon }}" aria-hidden="true"></i></a></li>
+        {%- endfor %}
+      </ul>
+      <div class="profile__focus">
+        <h2 class="mini-title">Research focus</h2>
+        <ul class="chips">
+          {%- for f in p.focus %}<li>{{ f }}</li>{%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <main id="main" class="content">
+
+    <!-- ============ About ============ -->
+    <section id="about" class="section">
+      <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>carbon ⇄ silicon</p>
+      <h2 class="hero">{{ p.tagline }}</h2>
+      <div class="prose">
+        {%- for para in p.about %}
+        {{ para | markdownify }}
+        {%- endfor %}
+      </div>
+
+      <div class="themes">
+        {%- for t in site.data.research %}
+        <article class="theme theme--{{ t.side }}">
+          <span class="theme__icon"><i class="{{ t.icon }}" aria-hidden="true"></i></span>
+          <h3>{{ t.title }}</h3>
+          <p>{{ t.text }}</p>
+        </article>
+        {%- endfor %}
+      </div>
+    </section>
+
+    <!-- ============ News ============ -->
+    <section id="news" class="section">
+      <h2 class="section__title"><span class="section__icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></span>News</h2>
+      {%- assign icons = "paper:fa-file-circle-check,award:fa-trophy,role:fa-rocket,talk:fa-microphone-lines,teach:fa-chalkboard-user,event:fa-location-dot" | split: "," -%}
+      <ul class="news">
+        {%- for n in site.data.news %}
+        {%- assign ic = "fa-circle" -%}
+        {%- for pair in icons -%}{%- assign kv = pair | split: ":" -%}{%- if kv[0] == n.type -%}{%- assign ic = kv[1] -%}{%- endif -%}{%- endfor -%}
+        <li class="news__item news__item--{{ n.type }}{% if forloop.index > 6 %} is-extra{% endif %}">
+          <time>{{ n.date }}</time>
+          <span class="news__icon"><i class="fa-solid {{ ic }}" aria-hidden="true"></i></span>
+          <span class="news__text">{{ n.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span>
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- if site.data.news.size > 6 %}
+      <button class="more-btn" type="button" data-toggle="news">Show all news <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+      {%- endif %}
+    </section>
+
+    <!-- ============ Publications ============ -->
+    <section id="publications" class="section">
+      <h2 class="section__title"><span class="section__icon"><i class="fa-solid fa-book-open" aria-hidden="true"></i></span>Publications</h2>
+      <p class="legend"><sup>*</sup> equal contribution &nbsp;·&nbsp; <i class="fa-regular fa-envelope" aria-hidden="true"></i> corresponding author &nbsp;·&nbsp; <a href="https://scholar.google.com/citations?user=HGeI9_8AAAAJ&hl=en">Full list on Google Scholar</a></p>
+
+      <h3 class="sub-title">Selected</h3>
+      <div class="pubs">
+        {%- for pub in site.data.publications %}{%- if pub.featured %}
+        <article class="pub">
+          <div class="pub__media">
+            <img src="{{ pub.image }}" alt="Figure from {{ pub.title }}" loading="lazy">
+            <span class="badge badge--{{ pub.status }}">{{ pub.badge }}</span>
+          </div>
+          <div class="pub__body">
+            <h4 class="pub__title">{{ pub.title }}</h4>
+            <p class="pub__authors">{% include authors.html authors=pub.authors %}</p>
+            <p class="pub__venue">{{ pub.venue }}</p>
+            <p class="pub__tldr">{{ pub.tldr }}</p>
+            {%- if pub.links.size > 0 %}
+            <div class="pub__links">
+              {%- for l in pub.links %}<a class="btn" href="{{ l.url }}"><i class="{{ l.icon }}" aria-hidden="true"></i>{{ l.label }}</a>{%- endfor %}
+            </div>
+            {%- endif %}
+          </div>
+        </article>
+        {%- endif %}{%- endfor %}
+      </div>
+
+      <h3 class="sub-title">Other publications</h3>
+      <ul class="publist">
+        {%- for pub in site.data.publications %}{%- unless pub.featured %}
+        <li class="publist__item">
+          <span class="badge badge--{{ pub.status }}">{{ pub.badge }}</span>
+          <div>
+            <p class="pub__title">{{ pub.title }}</p>
+            <p class="pub__authors">{% include authors.html authors=pub.authors %}</p>
+          </div>
+          <div class="publist__links">
+            {%- for l in pub.links %}<a href="{{ l.url }}" title="{{ l.label }}"><i class="{{ l.icon }}" aria-hidden="true"></i><span>{{ l.label }}</span></a>{%- endfor %}
+          </div>
+        </li>
+        {%- endunless %}{%- endfor %}
+      </ul>
+    </section>
+
+    <!-- ============ Experience ============ -->
+    <section id="experience" class="section">
+      <h2 class="section__title"><span class="section__icon"><i class="fa-solid fa-route" aria-hidden="true"></i></span>Experience</h2>
+      <ol class="timeline">
+        {%- for e in site.data.experience.work %}
+        <li class="tl tl--{{ e.tag }}">
+          {% include logo.html item=e %}
+          <div class="tl__body">
+            <div class="tl__head">
+              <h3>{% if e.url %}<a href="{{ e.url }}">{{ e.org }}</a>{% else %}{{ e.org }}{% endif %}</h3>
+              <span class="tl__dates">{{ e.dates }}</span>
+            </div>
+            <p class="tl__role">{{ e.role }}<span class="tl__place"> · {{ e.place }}</span></p>
+            <p class="tl__detail">{{ e.detail }}</p>
+          </div>
+        </li>
+        {%- endfor %}
+      </ol>
+
+      <h3 class="sub-title" id="education">Education</h3>
+      <ol class="timeline">
+        {%- for e in site.data.experience.education %}
+        <li class="tl">
+          {% include logo.html item=e %}
+          <div class="tl__body">
+            <div class="tl__head">
+              <h3>{{ e.org }}</h3>
+              <span class="tl__dates">{{ e.dates }}</span>
+            </div>
+            <p class="tl__role">{{ e.degree }}<span class="tl__place"> · {{ e.place }}</span></p>
+            <p class="tl__detail">{{ e.detail }}</p>
+          </div>
+        </li>
+        {%- endfor %}
+      </ol>
+    </section>
+
+    <!-- ============ Honors ============ -->
+    <section id="honors" class="section">
+      <h2 class="section__title"><span class="section__icon"><i class="fa-solid fa-award" aria-hidden="true"></i></span>Honors &amp; Awards</h2>
+      <ul class="rows">
+        {%- for h in site.data.misc.honors %}
+        <li><span class="rows__key">{{ h.year }}</span><span>{{ h.text }}</span></li>
+        {%- endfor %}
+      </ul>
+    </section>
+
+    <!-- ============ Teaching & Service ============ -->
+    <section id="service" class="section">
+      <h2 class="section__title"><span class="section__icon"><i class="fa-solid fa-people-group" aria-hidden="true"></i></span>Teaching &amp; Service</h2>
+      <div class="split">
+        <div>
+          <h3 class="mini-title">Teaching</h3>
+          <ul class="rows">
+            {%- for t in site.data.misc.teaching %}
+            <li><span class="rows__key">{{ t.term }}</span><span>{{ t.text }}</span></li>
+            {%- endfor %}
+          </ul>
+        </div>
+        <div>
+          <h3 class="mini-title">Reviewing</h3>
+          <ul class="rows">
+            {%- for r in site.data.misc.reviewing %}
+            <li><span class="rows__key">{{ r.kind }}</span><span>{{ r.text }}</span></li>
+            {%- endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>

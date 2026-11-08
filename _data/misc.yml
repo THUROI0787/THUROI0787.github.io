@@ -1,0 +1,17 @@
+honors:
+  - { year: "2025", text: "Special Excellence Award, Dongguan Science Promotion Association" }
+  - { year: "2025", text: "Outstanding Undergraduate Thesis Award, Tsinghua University (top 5%)" }
+  - { year: "2024", text: "Award for Outstanding Scientific and Technological Innovation, Tsinghua University" }
+  - { year: "2024", text: "3rd iStar Program, Tsinghua University (top 11 teams)" }
+  - { year: "2024", text: "Third Prize, China-U.S. Young Maker Competition (Beijing Division)" }
+  - { year: "2023", text: "Super Dream Award, Dongguan Science Promotion Association" }
+  - { year: "2023", text: "Zheng Gang Overseas Study Scholarship (4/250), Dept. EE, Tsinghua" }
+
+teaching:
+  - { term: "Fall 2026", text: "CS5491 Artificial Intelligence, CityU — Teaching Assistant" }
+  - { term: "Fall 2024, Spring 2025", text: "Design and Practice of Intelligent Robots, Tsinghua — Teaching Assistant" }
+
+reviewing:
+  - { kind: "Conferences", text: "NeurIPS, ICML, ICLR, AAAI, IJCAI, AISTATS, ACM MM, CPAL" }
+  - { kind: "Journals", text: "IEEE TMC, IEEE TCDS" }
+  - { kind: "Workshops", text: "ODI @ NeurIPS 2026, Trust4RSI-Agent @ AAAI 2027" }

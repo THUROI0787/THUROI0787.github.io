@@ -1,0 +1,5 @@
+{%- if include.item.logo -%}
+<span class="logo"><img src="{{ include.item.logo }}" alt="{{ include.item.org }} logo" loading="lazy"></span>
+{%- else -%}
+<span class="logo logo--mono" style="--mono: {{ include.item.color }}" aria-hidden="true">{{ include.item.mono }}</span>
+{%- endif -%}

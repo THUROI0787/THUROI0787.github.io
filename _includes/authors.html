@@ -1,0 +1,9 @@
+{%- comment -%} Renders an author list. "*" = equal contribution, "^" = corresponding. {%- endcomment -%}
+{%- assign me = "Ruoyu Zhao" -%}
+{%- for a in include.authors -%}
+  {%- assign clean = a | remove: "*" | remove: "^" -%}
+  {%- if clean == me -%}<strong class="me">{{ clean }}</strong>{%- else -%}{{ clean }}{%- endif -%}
+  {%- if a contains "*" -%}<sup title="Equal contribution">*</sup>{%- endif -%}
+  {%- if a contains "^" -%}<sup class="corr" title="Corresponding author"><i class="fa-regular fa-envelope"></i></sup>{%- endif -%}
+  {%- unless forloop.last -%}, {% endunless -%}
+{%- endfor -%}

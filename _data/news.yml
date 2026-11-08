@@ -1,0 +1,41 @@
+# News, newest first. type picks the icon: paper | award | role | talk | teach | event
+# DRAFT: dates and wording to be confirmed with Roi.
+- date: "2026.10"
+  type: paper
+  text: "Two papers on contrastive learning theory and SGD plasticity submitted to AISTATS 2027."
+- date: "2026.09"
+  type: paper
+  text: "*Neural Spectral Capacity* accepted to **NeurIPS 2026**."
+- date: "2026.09"
+  type: teach
+  text: "Serving as a Teaching Assistant for CS5491 Artificial Intelligence at CityU."
+- date: "2026.08"
+  type: role
+  text: "Joined [BrainGalaxy](https://brain-galaxy.omniex.ai/) (硅基智宇) as co-founder & CTO."
+- date: "2026"
+  type: paper
+  text: "Memristive in-memory computing paper accepted to **Nature Communications**."
+- date: "2026"
+  type: paper
+  text: "Blind image quality assessment paper accepted to **ACM MM 2026**."
+- date: "2026.05"
+  type: paper
+  text: "*Dyn-SSM* published in **IEEE TCDS**."
+- date: "2026.02"
+  type: paper
+  text: "Energy-efficient collaborative perception accepted to **IEEE T-ITS**."
+- date: "2025.09"
+  type: event
+  text: "Started my PhD at City University of Hong Kong."
+- date: "2025.06"
+  type: award
+  text: "Graduated from Tsinghua with the Outstanding Undergraduate Thesis Award (top 5%)."
+- date: "2025.01"
+  type: paper
+  text: "*Diff-2-in-1* accepted to **ICLR 2025**."
+- date: "2024.11"
+  type: talk
+  text: "Talk on spiking state space models at the Tsinghua Laboratory of Brain and Intelligence."
+- date: "2024.10"
+  type: event
+  text: "Attended the 2nd Nature Conference on Neuromorphic Computing in Beijing."

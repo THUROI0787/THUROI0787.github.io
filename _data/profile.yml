@@ -1,0 +1,50 @@
+# Sidebar card and About section -------------------------------------------
+name: "Ruoyu Zhao"
+nickname: "Roi"
+avatar: /images/avatar_config1.png
+roles:
+  - text: "PhD Student, CityU"
+    url: "https://www.cs.cityu.edu.hk/"
+  - text: "Co-founder & CTO, BrainGalaxy"
+    url: "https://brain-galaxy.omniex.ai/"
+location: "Hong Kong / Shanghai"
+email: "thuroi175007@gmail.com"
+cv: /files/CV_RuoyuZhao.pdf
+
+# Icons come from Font Awesome ("fa-...") or Academicons ("ai ai-...")
+links:
+  - { label: "Email", icon: "fa-solid fa-envelope", url: "mailto:thuroi175007@gmail.com" }
+  - { label: "Google Scholar", icon: "ai ai-google-scholar", url: "https://scholar.google.com/citations?user=HGeI9_8AAAAJ&hl=en" }
+  - { label: "GitHub", icon: "fa-brands fa-github", url: "https://github.com/THUROI0787" }
+  - { label: "LinkedIn", icon: "fa-brands fa-linkedin-in", url: "https://www.linkedin.com/in/ruoyu-zhao-thu787/" }
+  - { label: "ORCID", icon: "ai ai-orcid", url: "https://orcid.org/0009-0008-8170-4208" }
+  - { label: "CV", icon: "ai ai-cv", url: "/files/CV_RuoyuZhao.pdf" }
+
+focus:
+  - "Brain-inspired AI"
+  - "Spiking Neural Networks"
+  - "Neural Architecture"
+  - "Learning Dynamics"
+  - "Compute-in-Memory"
+
+tagline: "Bridging carbon and silicon intelligence."
+
+# Markdown is allowed in each paragraph
+about:
+  - >-
+    I'm a PhD student in the [Department of Computer Science](https://www.cs.cityu.edu.hk/)
+    at [City University of Hong Kong](https://www.cityu.edu.hk/), advised by
+    [Prof. Zhichao Lu](https://www.cs.cityu.edu.hk/~zhichalu/) and Prof. Qingfu Zhang.
+    I am also the **co-founder and CTO of [BrainGalaxy](https://brain-galaxy.omniex.ai/)
+    (硅基智宇)**, where we build energy-efficient AI by co-designing brain-inspired
+    algorithms with memristor-based compute-in-memory chips.
+  - >-
+    The human brain runs on about 20 watts, yet it learns continually, reasons in real time,
+    and adapts to the world around it. My research asks which of its principles we can carry
+    over to silicon: spiking and state-space dynamics for efficient sequence modeling, principled
+    ways to measure and discover neural architectures, and the optimization dynamics that decide
+    what networks can still learn.
+  - >-
+    Before CityU, I received my B.Eng. from the
+    [Department of Electronic Engineering, Tsinghua University](https://www.ee.tsinghua.edu.cn/en/),
+    with a minor in Statistics, and did research at Tsinghua, UIUC, and NUS.

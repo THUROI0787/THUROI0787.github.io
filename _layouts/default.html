@@ -1,31 +1,66 @@
----
-layout: compress
----
-
-{% include base_path %}
-
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
+<html lang="{{ site.lang | default: 'en' }}" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}</title>
+  <meta name="description" content="{{ site.description | strip }}">
+  <meta name="author" content="{{ site.data.profile.name }}">
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:description" content="{{ site.description | strip }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.data.profile.avatar }}">
+  <link rel="canonical" href="{{ site.url }}/">
+  <link rel="icon" href="/images/favicon.ico">
+  <meta name="theme-color" content="#0a0f1d">
 
-  <body>
+  <!-- Apply saved theme before paint so the page never flashes the wrong colors -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
 
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+  <canvas id="neural-bg" aria-hidden="true"></canvas>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    {{ content }}
-
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#top">
+        <span class="brand__dot" aria-hidden="true"></span>{{ site.data.profile.name }}
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#honors">Honors</a>
+        <a href="#service">Service</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Toggle light and dark theme">
+        <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun" aria-hidden="true"></i>
+      </button>
     </div>
+  </header>
 
-    {% include scripts.html %}
+  {{ content }}
 
-  </body>
+  <footer class="footer">
+    <p>© {{ site.time | date: "%Y" }} {{ site.data.profile.name }} · Last updated {{ site.time | date: "%b %Y" }}</p>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
 </html>
