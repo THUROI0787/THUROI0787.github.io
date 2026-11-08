@@ -15,7 +15,7 @@
 - id: 3
   short: "Understanding ANNs"
   title: "Understanding modern neural networks"
-  icon: "fa-solid fa-magnifying-glass-chart"
+  icon: "svg:nn"
   side: mix
   text: "How today's architectures and optimizers work, and how to use that: capacity measured from the specification alone, SGD and plasticity, efficient deployment."
 - id: 4

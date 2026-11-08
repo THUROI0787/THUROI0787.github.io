@@ -1,0 +1,3 @@
+{%- comment -%} Renders a Font Awesome class ("fa-solid fa-brain") or a custom SVG ("svg:nn" -> _includes/icons/nn.svg). {%- endcomment -%}
+{%- if include.name contains "svg:" -%}{%- assign f = include.name | remove: "svg:" | append: ".svg" -%}{%- include icons/{{ f }} -%}
+{%- else -%}<i class="{{ include.name }}" aria-hidden="true"></i>{%- endif -%}

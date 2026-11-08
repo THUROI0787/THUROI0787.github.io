@@ -55,7 +55,7 @@ layout: default
       <div class="themes">
         {%- for t in site.data.research %}
         <article class="theme theme--{{ t.side }}">
-          <span class="theme__icon"><i class="{{ t.icon }}" aria-hidden="true"></i></span>
+          <span class="theme__icon">{% include icon.html name=t.icon %}</span>
           <h3>{{ t.title }}</h3>
           <p>{{ t.text }}</p>
         </article>
@@ -91,7 +91,7 @@ layout: default
       <div class="tfilter" role="group" aria-label="Filter by research theme">
         <button type="button" class="tfilter__btn is-on" data-theme-filter="all" aria-pressed="true">All</button>
         {%- for t in site.data.research %}
-        <button type="button" class="tfilter__btn tfilter__btn--{{ t.side }}" data-theme-filter="{{ t.id }}" aria-pressed="false"><i class="{{ t.icon }}" aria-hidden="true"></i>{{ t.short }}</button>
+        <button type="button" class="tfilter__btn tfilter__btn--{{ t.side }}" data-theme-filter="{{ t.id }}" aria-pressed="false">{% include icon.html name=t.icon %}{{ t.short }}</button>
         {%- endfor %}
       </div>
 

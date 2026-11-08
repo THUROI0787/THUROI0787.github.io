@@ -511,3 +511,7 @@ h1, h2, h3, h4 { margin: 0; line-height: 1.25; }
 }
 [hidden] { display: none !important; }
 .au { white-space: nowrap; }
+.svgicon { width: 1.15em; height: 1.15em; display: inline-block; vertical-align: -0.15em; }
+.tfilter__btn .svgicon { color: var(--accent-btn, var(--silicon)); width: 13px; height: 13px; }
+.theme__icon .svgicon { width: 19px; height: 19px; }
+.tmark .svgicon { width: 13px; height: 13px; }

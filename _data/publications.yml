@@ -31,7 +31,7 @@
   badge: "Project"
   venue: "Research project · Global AI4Science Hackathon 2026 (AI Agent track)"
   status: project
-  image: /assets/img/papers/openarchevo-v15.webp
+  image: /assets/img/papers/openarchevo-v15.svg
   tldr: "A team of AI research agents on SciencePal guides OpenArchEvo's evolutionary search. With the agents, final designs clearly worse than the expert's drop from 6 of 12 to 0 of 12, across 1,380 trainings run by the agents."
   links:
     - { label: "Project", icon: "fa-solid fa-globe", url: "https://optima-cityu.github.io/OpenArchEvo-SciencePal/" }
