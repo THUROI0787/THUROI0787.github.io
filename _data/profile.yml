@@ -5,7 +5,7 @@ avatar: /images/avatar.webp
 roles:
   - text: "PhD Student, CityU"
     url: "https://www.cs.cityu.edu.hk/"
-  - text: "Co-founder & CTO, BrainGalaxy"
+  - text: "Co-founder & CTO, BrainGalaxy Ltd."
     url: "https://brain-galaxy.omniex.ai/"
 location: "Hong Kong / Shanghai"
 email: "thuroi175007@gmail.com"
@@ -43,7 +43,7 @@ about:
 
 # Startup spotlight shown under the About text
 startup:
-  name: "BrainGalaxy"
+  name: "BrainGalaxy Ltd."
   name_cn: "硅基智宇"
   logo: /assets/img/logos/braingalaxy.svg
   url: "https://brain-galaxy.omniex.ai/"

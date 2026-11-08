@@ -16,7 +16,7 @@
   text: "[OpenArchEvo](https://arxiv.org/abs/2609.40258) is on arXiv, with [code](https://github.com/Optima-CityU/OpenArchEvo): LLM-guided evolution discovers native spiking architectures."
 - date: "2026.08"
   type: role
-  text: "Joined [BrainGalaxy](https://brain-galaxy.omniex.ai/) (硅基智宇) as co-founder & CTO."
+  text: "Joined [BrainGalaxy Ltd.](https://brain-galaxy.omniex.ai/) (硅基智宇) as co-founder & CTO."
 - date: "2026.05"
   type: paper
   text: "*Dyn-SSM* published in **IEEE TCDS**."

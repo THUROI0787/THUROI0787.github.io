@@ -51,7 +51,7 @@
     - { label: "Paper", icon: "fa-solid fa-file-lines", url: "https://ieeexplore.ieee.org/document/11541194" }
 
 - title: "Forward-Only Test-Time Adaptation for Spiking Neural Networks"
-  authors: ["Ruoyu Zhao", "Y. Chen", "J. Wu", "L. Leng^"]  # TODO: confirm full names
+  authors: ["Ruoyu Zhao", "Yuting Chen", "Jiaqi Wu", "Luziwei Leng^"]
   themes: [2]
   role: first
   group: main
@@ -63,7 +63,7 @@
 
 - title: "Mamba with Hierarchical Memory: Solving Representation Bottleneck in Long Sequence Modeling"
   authors: ["Qinwen Wang", "Jieping Luo", "Aoxiang Qin", "Ruoyu Zhao", "Jianxiong Tang", "Wei Zhang", "Zhichao Lu", "Luziwei Leng^"]
-  themes: [2]
+  themes: [2, 3]
   group: main
   badge: "Preprint"
   venue: "Preprint"
