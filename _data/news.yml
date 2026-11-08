@@ -1,23 +1,22 @@
 # News, newest first. type picks the icon: paper | award | role | talk | project | event | visit
-# DRAFT: some months still to be confirmed with Roi (marked "confirm" below).
-- date: "2026.11"   # confirm
+- date: "2026.11"
   type: project
   text: "Released [OpenArchEvo v1.5](https://optima-cityu.github.io/OpenArchEvo-SciencePal/) with the SciencePal platform: a team of AI agents guides evolutionary search over neural architectures."
+- date: "2026.10"
+  type: paper
+  text: "*Neural Spectral Capacity* accepted to **NeurIPS 2026**."
+- date: "2026.10"
+  type: paper
+  text: "Memristive in-memory computing paper accepted to **Nature Communications**."
 - date: "2026.10"
   type: paper
   text: "New preprints on [SGD plasticity](https://arxiv.org/abs/2610.11475), [Gaussian regularizers in contrastive learning](https://arxiv.org/abs/2610.10299), and [residual-aware spectral capacity](https://arxiv.org/abs/2610.30823)."
 - date: "2026.09"
   type: paper
   text: "[OpenArchEvo](https://arxiv.org/abs/2609.40258) is on arXiv, with [code](https://github.com/Optima-CityU/OpenArchEvo): LLM-guided evolution discovers native spiking architectures."
-- date: "2026.09"   # confirm
-  type: paper
-  text: "*Neural Spectral Capacity* accepted to **NeurIPS 2026**."
 - date: "2026.08"
   type: role
   text: "Joined [BrainGalaxy](https://brain-galaxy.omniex.ai/) (硅基智宇) as co-founder & CTO."
-- date: "2026"     # confirm month
-  type: paper
-  text: "Memristive in-memory computing paper accepted to **Nature Communications**."
 - date: "2026.05"
   type: paper
   text: "*Dyn-SSM* published in **IEEE TCDS**."

@@ -58,7 +58,8 @@
   badge: "NeurIPS-W 2026"
   venue: "NeurIPS 2026 Workshop on On-Device Intelligence (ODI)"
   status: accepted
-  links: []
+  links:
+    - { label: "OpenReview", icon: "fa-solid fa-file-lines", url: "https://openreview.net/forum?id=AifoLsFO76" }
 
 - title: "Mamba with Hierarchical Memory: Solving Representation Bottleneck in Long Sequence Modeling"
   authors: ["Qinwen Wang", "Jieping Luo", "Aoxiang Qin", "Ruoyu Zhao", "Jianxiong Tang", "Wei Zhang", "Zhichao Lu", "Luziwei Leng^"]
