@@ -25,6 +25,7 @@
         t = (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
       }
       document.documentElement.setAttribute('data-theme', t);
+      if (t === 'light') { var m = document.querySelector('meta[name="theme-color"]'); if (m) m.content = '#f5f7fb'; }
       window.__theme = t;
     })();
   </script>

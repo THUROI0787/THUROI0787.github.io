@@ -29,3 +29,6 @@ defaults:
       path: "OpenArchEvo"
     values:
       sitemap: false
+
+# Do not pull in the github-pages default theme (it only adds an unused stylesheet)
+theme: null
