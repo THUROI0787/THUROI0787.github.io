@@ -51,7 +51,7 @@
     - { label: "Paper", icon: "fa-solid fa-file-lines", url: "https://ieeexplore.ieee.org/document/11541194" }
 
 - title: "Forward-Only Test-Time Adaptation for Spiking Neural Networks"
-  authors: ["Ruoyu Zhao", "Yuting Chen", "Jiaqi Wu", "Luziwei Leng^"]
+  authors: ["Ruoyu Zhao^", "Yuting Chen", "Jiaqi Wu", "Luziwei Leng"]
   themes: [2]
   role: first
   group: main
