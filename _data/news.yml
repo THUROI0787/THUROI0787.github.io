@@ -3,6 +3,9 @@
   type: project
   text: "Released [OpenArchEvo v1.5](https://optima-cityu.github.io/OpenArchEvo-SciencePal/) with the SciencePal platform: a team of AI agents guides evolutionary search over neural architectures."
 - date: "2026.10"
+  type: project
+  text: "Released [Absent Author](https://github.com/THUROI0787/absent-author), an evidence list and agent skills for spotting AI-produced papers with no human author behind them; featured in [ARIS](https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep#absent-author)."
+- date: "2026.10"
   type: paper
   text: "*Neural Spectral Capacity* accepted to **NeurIPS 2026**."
 - date: "2026.10"
